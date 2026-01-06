@@ -1,10 +1,14 @@
 \ProvidesPackage{0protoposal}
 
-\usepackage[a4paper, left=16mm, right=32mm, bottom=1in]{geometry} \setlength{\marginparwidth}{24mm}
-%\usepackage[a4paper, margin=1in]{geometry} \setlength{\marginparwidth}{1in}
+%\usepackage[a4paper, left=16mm, right=32mm, bottom=1in]{geometry} \setlength{\marginparwidth}{24mm}
+\usepackage[a4paper, margin=1in, headheight=1in, marginparwidth=2cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{libertinus}
 \usepackage[table,dvipsnames]{xcolor}
+\renewcommand\contentsname{\vspace{-1in}Summary\vspace{-8mm}}
+\renewcommand\listfigurename{Illustrations\vspace{-8mm}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 \usepackage{hyperref}
 \hypersetup{colorlinks=true, linkcolor={Sepia}, urlcolor={MidnightBlue}, citecolor={Mahogany}}
 \usepackage{enumitem} 
@@ -33,6 +37,7 @@
     \NewDocumentCommand{\citebook}{m}{\citetitle{#1}, a book by \citeauthor{#1} \parencite*{#1}}
     \NewDocumentCommand{\citework}{m}{\textit{\citetitle{#1}}, an article by \citeauthor{#1} \parencite*{#1}}
     \NewDocumentCommand{\citeconf}{m}{\textit{\citetitle{#1}}, a conference paper by \citeauthor{#1} \parencite*{#1}}
+  \defbibfilter{readings}{type=article or type=book or type=collection or type=inproceedings or type=unpublished}
   \defbibfilter{assets}{type=online or type=misc}
 
 \usepackage{tikz}
@@ -55,6 +60,37 @@
     \draw[chapZ, line width=2mm] (12.4,0) -- (13, 0);
   \end{tikzpicture}\end{center}
 }
+
+\newcommand{\tikzperi}{
+  \begin{center}\begin{tikzpicture}[node distance=32mm]
+    % Central node
+    \node (play) [pTile] {\textsc{Play}};
+    % Radius of the circle
+    \def\radius{32mm}
+    % Peripheral nodes in circular layout
+    \node (paratxt) [pTile, above of=play] {\textsc{Paratextuality}};
+    \node (physics) [pTile, below of=play, xshift=-36mm, yshift=12mm] {\textsc{Physicality}};
+    \node (popular) [pTile, below of=play, xshift= 36mm, yshift=12mm] {\textsc{Popularity}};
+    % Connections to central node
+    \draw [very thin, >=triangle 45, <->] (play) -- (paratxt);
+    \draw [very thin, >=triangle 45, <->] (play) -- (physics);
+    \draw [thin, >=triangle 45, <->] (play) -- (popular);
+    % Dotted lines and labels
+    \path [dotted, very thick] (paratxt) edge[bend right] node[midway, left]  {\small\textit{paraphernalia}} (physics);
+    %\draw [dotted,thick](paratxt)--(popular)node[midway,right,xshift=4mm,yshift=-4mm]{\small\textit{or proliferation?}};
+    \path [dotted, very thick] (paratxt) edge[bend left] node[midway, right]  {\small\textit{personalization}} (popular);
+    \path [dotted, very thick] (physics) edge[bend right] node[midway, below] {\small\textit{preservation}} (popular);
+    % Circular dashed periphery
+    \draw [violet, thick, dashed] (play) circle (16mm);
+    %\node (play) [left, gray, xshift=8mm, yshift=-2cm] {\footnotesize\textit{periphery}};
+    \begin{scope}[transform canvas={xscale=-1,yscale=-1}]
+        \path[decorate,decoration={text along path, text={perimeter},text align=center}] (1.78,0) arc[start angle=0,end angle=-300,radius=1.78];
+        \path[decorate,decoration={text along path, text={perimeter},text align=center}] (1.78,0) arc[start angle=0, end angle=-70,radius=1.78];
+        \path[decorate,decoration={text along path, text={perimeter},text align=center}] (1.88,0) arc[start angle=0, end angle=180,radius=1.88];
+    \end{scope}
+  \end{tikzpicture}\end{center}
+}
+
 \newcommand{\wordCount}[2]{\vspace{-8mm}\hfill\textit{\small(#1/#2 words)}}
 
 \setlist[description]{style=nextline, leftmargin=2em, labelsep=1em}
@@ -69,130 +105,13 @@
   \tikzchapters
 }
 
-
 \usepackage{todonotes}
-    \setuptodonotes{fancyline, size=\scriptsize}
+    \setuptodonotes{fancyline, size=\footnotesize}
     \todostyle{add}{inline, color=orange!72}
     \todostyle{def}{inline, color=pink!72}
     \todostyle{tip}{noinline, color=yellow!64}
     \todostyle{ref}{noinline, color = blue!32}
     \todostyle{gpt}{inline, color = blue!16}
-    \todostyle{ask}{inline, color = purple!32}
-% \usepackage{expl3}
-% \ExplSyntaxOn
-% \let\origtodo\todo
-% \RenewDocumentCommand{\todo}{O{} m}{\str_if_in:nnTF {#1}{gptip}{}{\str_if_in:nnTF{#1}{gpt}{}{\origtodo[#1]{#2}}}} % Suppress notes
-% \ExplSyntaxOff
-
-%\setuptodonotes{disable}
-
-
- % The general area that I am interested in researching revolves around holistic or experiential aesthetics. 
- % That includes but is not limited to, e.g. recreating nostalgic scenarios, or meticulously arranging purist setups/environments.
- 
- % I want to observe the historical impact of various iconic games as it initially developed, but before they received their cultural status and proceeded to influence later titles. 
- % My focus is on how it felt to play those games right as they came out, being played the way they were intended to be played in, and were just beginning to acquire cultural relevance.
- 
- % One of the key elements to probe would be physical release paraphernalia.
- % This could range from using authentic hardware and peripherals (such as CRT monitors that pixel graphics were intended for with a latency-free frame-rate or the systems’ original controls), or supplements like manuals, guides, magazines, as well as personal notes and even word of mouth.
- 
- % Use case examples considered off the top of my head:
- % \begin{itemize}
- %     \item  Mario Paint - introducing the SNES mouse
- %     \item  Dragon’s Lair - the quality of the gameplay experience almost entirely depends on the setting in which it is attempted (that is to say it is relatively obsolete now, though significantly influential in its time)
- %     \item  Legend of Zelda - exploration through manual mapping and collective knowledge sharing
- %     \item  Infocom’s ’feelies’ - physical artefacts and collectables accompanying text-based adventure games
- %     \item  Atari’s Swordquest contest + the overall concepts of alternate/trans/mixed-reality games
- % \end{itemize}
- 
- % Top 3 reference so far:
- % \begin{enumerate}
- %     \item Metagaming: Playing, Competing, Spectating, Cheating, Trading, Making, and Breaking Videogames by Stephanie Boluk and Patrick LeMieux
- %     \item Making Deep Games by Doris C. Rusch
- %     \item Social Realism in Gaming by Alexander R. Galloway
- % \end{enumerate}
- 
- % In terms of the playable artifact to complement my writing, I envision something that directly addresses those external circumstances and how they play a part in the potential experience a piece of media offers. It will most likely form into a game about games, befitting the meta aspects I mean to examine.
- % \newpage
- 
- 
- % \section*{Assessment Criteria}
- 
- % \paragraph{Scope and Appropriateness of Research Question:}\phantom{0}\\
- % Make sure to justify your research. 
- % \\This should not only be a project on what you like and find interesting, but most importantly it should explain why other people should care about it. 
- % \\NOT ALL QUESTIONS ARE WORTH ASKING (WITHIN THE SCIENTIFIC COMMUNITY).
- % \begin{itemize}
- %     \item Is the topic that you selected relevant to discourses and debates in game studies?
- %     \item Is the research question narrow enough to be specific but with the breadth to sustain the economy of a large piece of writing?
- % \end{itemize}
- 
- % \paragraph{Clarity and coherence of argumentation: }\phantom{0}\\
- % Avoid generalisations and vagueness. 
- % \\Make sure to define the terms and concepts that you mobilise in your work. 
- % \\You are not preparing an opinion piece, and you should avoid value judgements 
- % \\Evaluation must be preceded by thorough and rigorous analysis. 
- % \\The question is not whether something is good or bad, but rather how it works and why. 
- % \\YOU ARE NOT WRITING GAME REVIEWS
- % \begin{itemize}
- %     \item Are the arguments presented in a logical way?
- %     \item Are they grounded and supported by evidence?
- %     \item Are the statements specific and punctual?
- % \end{itemize}
- 
- % \paragraph{Engagement with literature and other sources:}\phantom{0}\\
- % It is part of the work of a dissertation to find connections between your selected topic and important theoretical paradigms. 
- % \\REFERENCES ARE NOT BORN EQUAL!
- % \begin{itemize}
- %     \item Does the proposal provide references to relevant theoretical works and frameworks?
- %     \item Is the topic of choice contextualised within relevant theoretical questions?
- %     \item Does it provide clear examples of this issues across existing games?
- %     \item Are the references appropriately selected to provide a sense of which are the most important works and authors on that topic?
- % \end{itemize}
- 
- % \paragraph{Presentation, Referencing, and Written English:}\phantom{0}\\
- % Present a polished project,including how it is structured and written. 
- % \\Consider basic grammatical and syntactical issues, vocabulary, a formal register, and appropriate terminology. 
- % \\Be familiar with the appropriate way to format references, including both you primary and secondary sources. 
- % \\NO BULLET POINTS, NO LISTICLES, NO HYPERBOLE, NO MISQUOTATIONS, NO PATCHWORK.
- 
- % \paragraph{Project Feasibility:}\phantom{0}\\
- % Time management and planning are crucial skills in carrying out theoretical and empirical research. 
- % \\HAVE A BUFFER!
- % \begin{itemize}
- %     \item Can you finish the project with the time and resources available to you?
- %     \item Can you answer your research question in a meaningful way given these constraints?
- %     \item Do you have a clear plan for the progression of your research and does it account for potential collateral issues?
- % \end{itemize}
- 
- % \paragraph{Final Thoughts}
- % This proposal
- % \\should be an overview of what you intend to research. 
- % \\should carefully, clearly and critically explain your project, 
- % \\  identifying a topic, 
- % \\  the relevant approaches to its study and 
- % \\  what you aim to achieve with your practical component.
- % \\is foundational to the rest of your research project, 
- % \\includes reading, writing, creating, playing and thinking.
- % \\Anyone reading this should be able to understand:
- % \\what your research is about, 
- % \\what it seeks to achieve, 
- % \\why it is important, and 
- % \\how it will be conducted.
- % \\
- % Make sure to have read the Module Guide on Brightspace for further advice, 
- % and the assignment guides for Assignment 2 (The Dissertation) also.
- % This piece of work is going to be your guide.
- 
- % \section*{Rando notes}
- % creative, thoughtful, thorough, FEASIBLE
- % gotta enjoy it duuh
- % field of research > topic > answering a question
- % topic i your object you investigate it with research which is like a magnifying glass
- % the research question shapes the methods
- % you shouldn't have an answer already to your research question
- % try not to ask a yes/no question
- % answer the question without involving other people - use all available data from published statistics etc
- % no apriori please, let us not start with confirmation bias
- % ivan 'i like my intro and conclusion short and sweet, not too much fluff'
- % 8K words and a game informing each other, in 179- days (5th September)
+    \todostyle{ask}{inline, color = green!32}
+    \todostyle{gem}{inline, color = purple!16}
+    \todostyle{dev}{inline, color = purple!64}
