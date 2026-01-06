@@ -1,0 +1,28 @@
+# LaTeX build artefacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+
+# latexmk
+latexmkrc
+
+# BibLaTeX Biber
+*.run.xml
+*.bcf
+
+# Editor
+.vscode
