@@ -29,7 +29,9 @@
 
 \usepackage[backend=biber, style=apa, sorting=nyt]{biblatex}
 % \usepackage[style=numeric]{biblatex} % TEMP/HACK: to count refs
-\addbibresource{ref.bib}
+\addbibresource{reads.bib}
+\addbibresource{plays.bib}
+\addbibresource{tools.bib}
     \DeclareCiteCommand{\citeauthor}
       {\usebibmacro{prenote}}
       {\printnames[given-family]{author}} % for full name
@@ -92,7 +94,18 @@
   \end{tikzpicture}\end{center}
 }
 
+\newcommand{\keywords}[1]{
+  \reversemarginpar\marginnote{\footnotesize\textsc{Keywords:}\textit{#1}}[4cm]
+  \normalmarginpar
+} % aesthetics, authenticity, experience, immersion, materiality, metagaming, nostalgia, paraphernalia, paratext, preservation, retrospective, transmedia
+
 \newcommand{\wordCount}[2]{\vspace{-8mm}\hfill\textit{\small(#1/#2 words)}}
+
+\newenvironment{abstract}
+  {\newgeometry{left=1.1in, top=1.6cm, right=1.1in,bottom=1.6cm}
+  \chapter*{\centering\vspace{-1cm} Abstract}\addcontentsline{toc}{chapter}{Abstract}
+  \begin{center}\vspace{-1cm}}
+  {\end{center}\restoregeometry}
 
 \setlist[description]{style=nextline, leftmargin=2em, labelsep=1em}
 \newcommand{\srcBullet}[1]{\\\textcolor{#1}{\hspace{-8pt}\faAngleRight}}
@@ -109,10 +122,9 @@
 \usepackage{todonotes}
     \setuptodonotes{fancyline, size=\footnotesize}
     \todostyle{add}{inline, color=orange!72}
-    \todostyle{def}{inline, color=pink!72}
     \todostyle{tip}{noinline, color=yellow!64}
     \todostyle{ref}{noinline, color = blue!32}
     \todostyle{gpt}{inline, color = blue!16}
     \todostyle{ask}{inline, color = green!32}
-    \todostyle{gem}{inline, color = purple!16}
-    \todostyle{dev}{inline, color = purple!64}
+    \todostyle{gem}{inline, color = pink!64}
+    \todostyle{dev}{inline, color = purple!32}
