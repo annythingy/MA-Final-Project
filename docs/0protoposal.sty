@@ -1,15 +1,10 @@
 \ProvidesPackage{0protoposal}
-
-%\usepackage[a4paper, left=16mm, right=32mm, bottom=1in]{geometry} \setlength{\marginparwidth}{24mm}
-\usepackage[a4paper, margin=1in, headheight=1in, marginparwidth=2cm]{geometry}
-\usepackage[T1]{fontenc}
-\usepackage{libertinus}
+\usepackage[a4paper, margin=1in, top=2.4cm, headheight=24mm, marginparwidth=2cm]{geometry}
+%\usepackage[T1]{fontenc}\usepackage{libertinus}
+\usepackage{newtxtext,newtxmath} % Times New Roman
 \usepackage[table,dvipsnames]{xcolor}
-\renewcommand\contentsname{\vspace{-1in}Summary\vspace{-8mm}}
-\renewcommand\listfigurename{Illustrations\vspace{-8mm}}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\PassOptionsToPackage{hyphens}{url}
+\usepackage{fancyhdr}\pagestyle{fancy}
+\usepackage{xurl}
 \usepackage{hyperref}
 \hypersetup{colorlinks=true, linkcolor={Sepia}, urlcolor={MidnightBlue}, citecolor={Mahogany}}
 \usepackage{enumitem} 
@@ -19,6 +14,45 @@
 \usepackage{marginnote}
 \usepackage{fontawesome5}
 \setlength{\arrayrulewidth}{0.16mm}\arrayrulecolor{gray}
+\usepackage{setspace}\onehalfspacing
+\usepackage{csquotes}
+\usepackage{titlesec}
+
+\usepackage[backend=biber, style=apa, sorting=nyt]{biblatex}
+% \usepackage[style=numeric]{biblatex} % TEMP/HACK: to count refs
+  \ExecuteBibliographyOptions{doi=true,url=false}
+  \DeclareFieldFormat{doi}{\url{https://doi.org/#1}} %\newline if needed
+  \AtBeginBibliography{\raggedright}
+  \addbibresource{reads.bib}
+  \addbibresource{plays.bib}
+  \addbibresource{tools.bib}
+  \DeclareCiteCommand{\citeauthor}
+    {\usebibmacro{prenote}}
+    {\printnames[given-family]{author}} % for full name
+    {\multicitedelim}
+    {\usebibmacro{postnote}}
+  \NewDocumentCommand{\citebook}{m}{\citetitle{#1}, a book by \citeauthor{#1} \parencite*{#1}}
+  \NewDocumentCommand{\citework}{m}{\textit{\citetitle{#1}}, an article by \citeauthor{#1} \parencite*{#1}}
+  \NewDocumentCommand{\citeconf}{m}{\textit{\citetitle{#1}}, a conference paper by \citeauthor{#1} \parencite*{#1}}
+  \defbibfilter{readings}{type=article or type=book or type=collection or type=inproceedings or type=unpublished}
+  \defbibfilter{assets}{type=online or type=misc}
+
+\titleformat{\chapter}[hang]{\bfseries\LARGE\scshape\centering\vspace{-8mm}}{Chapter \thechapter}{.8ex}{}
+\titleformat{\section}[runin]{\bfseries\Large}{\thesection}{1.6ex}{}
+
+\renewcommand\contentsname{Summary\vspace{-8mm}}
+\renewcommand\listfigurename{Illustrations\vspace{-8mm}}
+
+\newenvironment{my-abstract}
+  {\begin{center}\begin{singlespace}\vspace{-8mm}
+    \textsc{\LARGE Abstract \\}\vspace{8mm}}
+  {\end{singlespace}\end{center}}
+
+\newcommand{\keywords}[1]{
+  \reversemarginpar\marginnote{\footnotesize\textsc{Keywords:}\textit{#1}}[4cm]
+  \normalmarginpar} % aesthetics, authenticity, experience, immersion, materiality, metagaming, nostalgia, paraphernalia, paratext, preservation, retrospective, transmedia
+
+\newcommand{\wordCount}[2]{\vspace{-8mm}\hfill\textit{\small(#1/#2 words)}}
 
 \definecolor{chap0}{RGB}{100, 200, 200}
 \definecolor{chap1}{RGB}{100, 150, 200}
@@ -26,22 +60,6 @@
 \definecolor{chap3}{RGB}{150, 100, 200}
 \definecolor{chap4}{RGB}{200, 100, 200}
 \definecolor{chapZ}{RGB}{250, 100, 200}
-
-\usepackage[backend=biber, style=apa, sorting=nyt]{biblatex}
-% \usepackage[style=numeric]{biblatex} % TEMP/HACK: to count refs
-\addbibresource{reads.bib}
-\addbibresource{plays.bib}
-\addbibresource{tools.bib}
-    \DeclareCiteCommand{\citeauthor}
-      {\usebibmacro{prenote}}
-      {\printnames[given-family]{author}} % for full name
-      {\multicitedelim}
-      {\usebibmacro{postnote}}
-    \NewDocumentCommand{\citebook}{m}{\citetitle{#1}, a book by \citeauthor{#1} \parencite*{#1}}
-    \NewDocumentCommand{\citework}{m}{\textit{\citetitle{#1}}, an article by \citeauthor{#1} \parencite*{#1}}
-    \NewDocumentCommand{\citeconf}{m}{\textit{\citetitle{#1}}, a conference paper by \citeauthor{#1} \parencite*{#1}}
-  \defbibfilter{readings}{type=article or type=book or type=collection or type=inproceedings or type=unpublished}
-  \defbibfilter{assets}{type=online or type=misc}
 
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows, arrows.meta}
@@ -52,6 +70,7 @@
     \tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
     \tikzstyle{arrow} = [thick,->,>=stealth]
     \tikzstyle{pTile} = [rectangle, draw, rounded corners, text centered]
+
 \newcommand{\tikzchapters}{
   \begin{center}\begin{tikzpicture}
     % 5% = 0.6, 17.5% = 2.1, 20% = 2.4, 22.5% = 2.7, 30% = 3.6 w/ 0.2 buffer
@@ -94,19 +113,6 @@
   \end{tikzpicture}\end{center}
 }
 
-\newcommand{\keywords}[1]{
-  \reversemarginpar\marginnote{\footnotesize\textsc{Keywords:}\textit{#1}}[4cm]
-  \normalmarginpar
-} % aesthetics, authenticity, experience, immersion, materiality, metagaming, nostalgia, paraphernalia, paratext, preservation, retrospective, transmedia
-
-\newcommand{\wordCount}[2]{\vspace{-8mm}\hfill\textit{\small(#1/#2 words)}}
-
-\newenvironment{my-abstract}
-  {\newgeometry{left=1.1in, top=1.6cm, right=1.1in,bottom=1.6cm}
-  \chapter*{\centering\vspace{-1cm} Abstract}\addcontentsline{toc}{chapter}{Abstract}
-  \begin{center}\vspace{-1cm}}
-  {\end{center}\restoregeometry}
-
 \setlist[description]{style=nextline, leftmargin=2em, labelsep=1em}
 \newcommand{\srcBullet}[1]{\\\textcolor{#1}{\hspace{-8pt}\faAngleRight}}
 \NewDocumentCommand{\chapterplan}{m m m m m m}{
@@ -115,8 +121,8 @@
   \begin{itemize}[leftmargin=0em, labelindent=0pt, labelwidth=1.4em, labelsep=0.4em, noitemsep]
     \item[\textcolor{#1}{\faCog}]         \textsc{\small Methods:} {\small #5}
     \item[\textcolor{#1}{\faLightbulb\>}] \textsc{\small Sources:} {\small #6}
-  \end{itemize}\vspace{-8mm}
-  \tikzchapters
+  \end{itemize}
+  \vspace{-8mm}\tikzchapters
 }
 
 \usepackage{todonotes}
