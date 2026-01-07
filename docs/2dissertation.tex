@@ -7,22 +7,15 @@
     \begin{figure}\centering\includegraphics{bruni-logo.png}\end{figure}
     \vspace{1in}\textbf{\Huge Playing the Periphery}\vspace{1in}\\
     {\huge A thesis submitted for the degree of MA Games Design\vspace{1cm} by}
-    \vspace{1cm}\\
-    \textbf{\LARGE 2441871}\vfill
+    \vspace{1cm}\\\texttt{\LARGE 2441871}\vfill
         \todo[tip,inline]{Font: Arial or Times New Roman.}
-        \todo[tip,inline]{Double line spacing, with the exception of indented quotations or footnotes.}
-        \todo[tip,inline]{Longer quotations (40+ words or 4+ lines): separate, indented text blocks w/o quotation marks.}
+        \todo[tip,inline]{Double line spacing, except for indented quotations and footnotes.}
+        \todo[tip,inline]{Quotations of 40+ words or 4+ lines: separate indented text blocks w/o quotation marks.}
     \vfill Department of Arts and Humanities, Brunel University London
 \end{titlepage}
 
-\tableofcontents 
-\begingroup\let\clearpage\relax\vspace{-1cm}\listoffigures\endgroup
-\newgeometry{left=1.1in, top=1.6cm, right=1.1in,bottom=1.6cm}
-
-\chapter*{\centering\vspace{-1cm} Abstract}\addcontentsline{toc}{chapter}{Abstract}
-\reversemarginpar\marginnote{\footnotesize\textsc{Keywords:}
-    \textit{aesthetics, authenticity, experience, immersion, materiality, metagaming, nostalgia, paraphernalia, paratext, preservation, retrospective, transmedia}}[4cm]
-\begin{center}\vspace{-1cm}
+\tableofcontents\begingroup\let\clearpage\relax\vspace{-1cm}\listoffigures\endgroup
+\begin{my-abstract}
     My topic of interest lies at the intersection of paratextual, corporeal, and sociocultural aspects of iconic game titles and their impact on the industry’s history.
     Paratext consists of surrounding media not included in the game itself but strongly influencing how the experience is accessed, framed, and understood.
     Material comprises the physical means and contexts of play, in turn shaping the experience through sensory input, physical feedback, and presence. 
@@ -43,8 +36,7 @@
     Concurrently, any relevant observations should be recorded with the intent to feed back into the writing and, eventually, provide a strong basis for reflection.
     Exercising theory in practice is expected to direct the unfolding of the game's design.
     The goal that I aspire to achieve with this project is tracing a model of media creation that is elevated by its surrounding context, and also aligns with key values established in my personal game design philosophy \parencite*[GD5609,][]{myDesignPhil}, then put the resulting framework into future practice.
-\end{center}
-\normalmarginpar\restoregeometry
+\end{my-abstract}
 
 \chapter{Introduction}
 \begin{figure}[ht]\tikzperi
@@ -53,12 +45,10 @@
     \todo[add]{Declaration of research topic and question}
     \todo[add]{their field and relevance to game studies}
     \vfill
-    \todo[add]{Clarify vocabulary: `holistic' }
-    \todo[add]{Clarify vocabulary: `authenticity'}
-    \todo[add]{Clarify vocabulary: `experiential aesthetics'}
+    \todo[add]{Clarify vocabulary `holistic' }
     \vfill
     \todo[add]{Pitch practical part}
-    \todo[add]{Connection to writing.}
+    \todo[add]{Connect to writtten part}
     \vfill
     \todo[add]{Overview of primary and secondary titles}
 
@@ -110,12 +100,52 @@
 
 \chapter{Development}
     \todo[add]{Chronicle research through design}
-    \todo[add]{Explain how interrogating a question via prototype design, theory informed practice and vice versa}
+    \todo[add]{Explain how in interrogating the question via prototype design, theory informed practice and vice versa}
     \todo[add]{Recognise any setbacks or limitations.}
-    \todo[add]{Primary sources that inspired direction: \cite{inscryption2021}}
+    \todo[add]{Primary sources that inspired direction: 
+        \\ Space Invaders loading mini-game
+        \\ Sims x2 cases
+        \\ UFO50
+        \\ \cite{inscryption2021}
+        \\ Vectrex}
     \todo[ref,inline]{Guidance from reading: \citebook{rusch}}
 
-\newpage\section{Prototype}
+\newpage
+
+\newpage\section{The Lost AMOLED}
+Clever Rebel Trials was an ambitious attempt to reinvent platform exclusivity following the 4th Generation's Console Wars.
+Rather than developing a killer app for a designated system, Adelin Melony (1970-2002) set out to create a machine whose sole purpose was to play the one game that it was optimised for.
+The game itself was released in 1997 on the Ludic Entertainment Device - its dedicated Generation 4.5 console that was soon dubbed ``Addie Mel's One-Shot LED', shortened to AMOLED.
+While the approach is not unheard of (being a standard practice for arcade acabinets and many 1st and 2nd generation products) such an idea carries major risks concerning scope, audience demand and reception.
+
+CRT is set in a retro-futuristic world with competing factions offering exclusive membership perks.
+The main gameplay loop revolves around managing a multitude of characters from the Clever Rebels Team.
+Each rebel specialises in a very narrow field of studies, which makes for entirely different character builds and run strategies.
+
+\vfill\paragraph{Notes from the GM}
+The creator's names are anagrams using the first names of Daniel Handler, whom she also shares a birthday with, and his pseudonym Lemony Snicket. Chronologically, her lifetime closely matches the birth and growth of videogame technology, but was sadly cut short when she was only 32 years old.\par
+Although they have been swapped and scrambled into vague equivalents, most names within this alternate universe originate from the ASOUE books.\par
+    \todo[ref]{cite}
+In them, there are also mentions of a secret organisation called VFD. In Snicket's world VFD stands for Volunteer Fire Department, but in ours, among other things, it means Vacuum Fluorescent Display. I found the notion of using other display type acronyms amusing, hence CRT and LED/AMOLED.\par
+Beside having a name reminiscent of NES, the LED console with its CRT game came out at a time of a literal dimensional shift in computer graphics technology - a transition from 16-bit pixels on cartridges to 32-bit polygons on optical discs with all the new rendering and memory management methodologies it brought about.
+\footnote{It also may or may not conveniently share a birthyear with yours truly.}
+
+    \vfill
+    \todo[gpt]{Skill trees progression: List studies/disciplines and what each excels and fails at}
+    \todo[add]{Setting within the fictional layer (worldbuilding comes later)}
+    \todo[gpt]{C. Narrative \& World Structure (Backstory as Architecture)
+            \\\hspace{8mm}Historical scope larger than the game itself
+            \\\hspace{8mm}Mention key institutions, past crises, and unresolved events
+            \\Identify known unknowns
+            \\\hspace{8mm}Events everyone references but noone explains fully
+            \\\hspace{8mm}Long-dead figures whose actions shape the present
+            \\\hspace{8mm}Conflicting records or interpretations
+            \\Define branching allegiance paths (conceptual)
+            \\\hspace{8mm}factions/institutions
+            \\\hspace{8mm}Each has internal logic, incomplete worldview, and ethical trade-offs}
+\section{Periphery}
+
+\section{Prototype}
     \todo[gem]{Layout \& UI:
         \\\hspace{8mm}screens correspond to hand placement: left hand collects water, right hand steers the truck
         \\\hspace{8mm}controls were "canonically" separate dials (and/or even meant for two players?)
@@ -146,6 +176,7 @@
 \end{figure}
     \todo[add,noinline]{wireframe with legit software}
 
+    \todo[dev]{title screen}
     \todo[dev]{tree growth stages}
     \todo[dev]{adult trees produce saplings}
     \todo[dev]{forest coverage -> cloud size}
@@ -155,62 +186,32 @@
     \todo[dev]{upgradable bucket}
     \todo[dev]{auto-collecting bucket}
     \todo[dev]{score -> loading progress}
+    \todo[dev]{full bar -> start button to end game}
 
-\newpage\section{Periphery}
-\subsection{The Lost Game}
-    \todo[add]{High-level overview
-            \\\hspace{8mm}Genre: RPG (narrative + systems-driven)
-            \\\hspace{8mm}Player role (institutional, mid-hierarchy, specialised)
-            \\\hspace{8mm}Core themes (responsibility, partial knowledge, delayed consequence)}
-
-    \todo[gpt]{Specialisation over general competence
-            \\\hspace{8mm}Ambiguity through selective disclosure
-            \\\hspace{8mm}Irreversibility of decisions
-            \\\hspace{8mm}Systems that outlive the player}
-    \todo[add]{System Design (Implied, Not Implemented)}
-    \todo[gpt]{Skill trees: List studies/disciplines and what each excels and fails at
-            \\Progression?}
-    \todo[add]{Setting within the fictional layer (worldbuilding comes later)}
-    \todo[gpt]{C. Narrative \& World Structure (Backstory as Architecture)
-            \\\hspace{8mm}Historical scope larger than the game itself
-            \\\hspace{8mm}Mention key institutions, past crises, and unresolved events
-            \\Identify known unknowns
-            \\\hspace{8mm}Events everyone references but noone explains fully
-            \\\hspace{8mm}Long-dead figures whose actions shape the present
-            \\\hspace{8mm}Conflicting records or interpretations
-            \\Define branching allegiance paths (conceptual)
-            \\\hspace{8mm}factions/institutions
-            \\\hspace{8mm}Each has internal logic, incomplete worldview, and ethical trade-offs}
 \subsection{Paraphernalia}\hfill\textit{Paratextuality + Physicality}
     \todo[gpt]{The material artefacts and design elements that mediate player engagement.
         \\Talk about the manual with regards to gameplay}
 \subsection{Preservation}\hfill\textit{Physicality + Popularity}
+    \todo[add]{Describe the hardware quirks
+        dials, 2 screens?}
     \todo[gpt]{The state of survival, degradation, and community efforts to archive or interpret the game.
-        \\Describe the original control hardware and interface constraints
-        \\\hspace{8mm}Dual dials, split controls, two-player operation as original hardware design
-        \\\hspace{8mm}Ergonomic and technical friction encoded in surviving artefacts
-        \\\hspace{8mm}Subsequent simplification or loss in later ports or preservation efforts
         \\Map the technical state of preservation
-        \\\hspace{8mm}Confirm what game software survives (e.g., only the loading mini-game executable)
-        \\\hspace{8mm}Identify corrupted or missing files, UI assets, save formats
+        \\\hspace{8mm}Confirm what game components survived
         \\\hspace{8mm}Detail physical media formats and archival status (cartridges, discs, hardware dependencies)
         \\Write about the reasons and impact of loss
         \\\hspace{8mm}Technological transition between gaming generations as a cause
         \\\hspace{8mm}Hardware obsolescence and toolchain abandonment
         \\\hspace{8mm}How incomplete preservation shapes player experience and community memory}
 \subsection{Personalisation}\hfill\textit{Paratextuality + Popularity}
-    \todo[gpt]{The ways in which community interpretations and practices shape legacy.
-        \\Write a representative forum thread or community discussion excerpt that reveals factional or skill-based sub-communities forming around interpretations
-        \\Define cultural status and legacy
+    \todo[gpt]{How community interpretations and practices shape legacy.
         \\\hspace{8mm}Position as cult classic, revered for atmosphere and design philosophy
         \\\hspace{8mm}Discuss how the game is remembered more than played
         \\\hspace{8mm}Explore how ambiguity fosters community creativity and personal meaning-making}
 
 \newpage\section{Product}
-    \todo[gpt]{G. Internal design notes (fictional) on the Meta-Mini-Game
-            \\\hspace{8mm}Explain why the it exists - frame it as preparatory or calibrational
-            \\It teaches multitasking limits and systemic tension
-            \\Ensure conceptual alignment}
+    \todo[add]{Why does the mini-game exist?
+        Calibration for both platform and player
+        Checking controls work propery while getting used to them and learning tip\&tricks}
     \todo[gpt]{H. Dissertation Integration (not fictional)
             \\A reflective section linking the games
             \\\hspace{8mm}Mini-game as implemented theory
@@ -223,25 +224,19 @@
     
 \chapter{Synthesis}
     \todo[add]{Revision of the artifact}
-    \vfill
     \todo[add]{Discussion on theory in practice}
     \todo[add]{how the two informed, or clashed with, each other}
     \todo[add]{Correlation with primary sources}
     \todo[add]{Provisional answer to the research question.}
-        \vfill
     \todo[ref,inline]{Secondary sources that share concerns with the artifact}
 
 \chapter{Conclusion}
     \todo[add]{Reflect critically on what has been achieved}
-    \vfill
     \todo[add]{Outline implications and further open-ended research directions to build upon.}
-    \vfill
     \todo[ref,inline]{Recommend reading/playing not mentioned in earlier chapters}
 \vfill
-    \todo[inline]{Add final word count after conclusions and before references;
-        not including acknowledgements, references, footnotes, appendices}
+    \todo[add]{\Large Final word count minus references, footnotes and appendices}
 \newpage
-
 \addcontentsline{toc}{chapter}{References}
     \printbibliography[title={\LARGE Bibliography}, filter=readings]
     \printbibliography[title={\LARGE Ludography},   type = software]
