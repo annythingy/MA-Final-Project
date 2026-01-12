@@ -1,6 +1,7 @@
 # LaTeX build artefacts
 *.aux
 *.bbl
+*.bbl-SAVE-ERROR
 *.bcf
 *.blg
 *.fdb_latexmk
@@ -15,6 +16,7 @@
 *.run.xml
 *.synctex.gz
 *.toc
+*.tdo
 *.xdv
 
 # latexmk
@@ -23,7 +25,6 @@ latexmkrc
 # BibLaTeX Biber
 *.run.xml
 *.bcf
-
 
 # Godot 4+ specific ignores
 .godot/

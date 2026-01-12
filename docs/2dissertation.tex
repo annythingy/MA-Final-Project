@@ -4,25 +4,25 @@
 
 \begin{document}
 \begin{titlepage}\centering
-    \begin{figure}\centering\includegraphics{bruni-logo.png}\end{figure}
-    \vspace{1in}\textbf{\Huge Playing the Periphery}\vspace{1in}\\
-    {\huge A thesis submitted for the degree of MA Games Design\vspace{1cm} by}
-    \vspace{1cm}\\\texttt{\LARGE 2441871}
-    \vfill Department of Arts and Humanities, Brunel University London
+    \begin{figure}[ht!]\centering\includegraphics{bruni-logo.png}\end{figure}
+    \vfill\textbf{\Huge Playing the Periphery}\vspace{24mm}\\
+    {\huge A thesis submitted for the degree of\\MA Games Design\\
+    \vspace{8mm}by}\vspace{8mm}\\\texttt{\LARGE 2\>4\>4\>1\>8\>7\>1}\vfill
+    {\Large Department of Arts and Humanities, Brunel University London}
 \end{titlepage}
 
 \tableofcontents\begingroup\let\clearpage\relax\listoffigures\endgroup
 
-\newgeometry{top=4mm,bottom=16mm}
-\chapter{Introduction}
-\begin{my-abstract}
+\newgeometry{top=16mm,bottom=16mm}
+\chapter*{Abstract}\addcontentsline{toc}{section}{Abstract}
+  \begin{center}\begin{singlespace}
     My topic of interest lies at the intersection of paratextual, corporeal, and sociocultural aspects of iconic game titles and their impact of their legacy.
     In other words, elements that lie at and/or outside the perimeter of the magic circle\parencite{huizinga}.
     Paratext consists of surrounding media not included in the game itself but strongly influencing how the experience is accessed, framed, and understood.
     Material comprises the physical means and contexts of play, in turn shaping the experience through sensory input, physical feedback, and presence. 
     Community is embodied by the players themselves through shared habits, beliefs, and informal systems.
     The synergy of this trinity is flavoured by the aesthetics of the game playing experience in its entirety.
-    Moreover, each pairing between the three permeates another facet of that external conceptual space.\par
+    Moreover, pairing any of these three permeates another facet of that external conceptual space.\par
     In consideration of these angles, my project poses the following question:
     \begin{displayquote}
         \textbf{\textit{In what ways can contemporary game design achieve holistic aesthetic experiences in the likeness of historically acclaimed game titles?}}
@@ -41,22 +41,40 @@
     Concurrently, any relevant observations should be recorded with the intent to feed back into the writing and, eventually, provide a strong basis for reflection.
     Exercising theory in practice is expected to direct the unfolding of the game's design.
     The goal that I aspire to achieve with this project is tracing a model of media creation that is elevated by its surrounding context, and also aligns with key values established in my personal game design philosophy \parencite*[GD5609,][]{myDesignPhil}, then put the resulting framework into future practice.
-\end{my-abstract}
-\restoregeometry
+\end{singlespace}\end{center}
+\restoregeometry\clearpage
 
+\chapter{Introduction}
+\section*{Extrinsic Circles}
+Contextual influences and overall legacy impact are among the focal points for both primary and secondary sources considered in this paper.
+Theoretical examinations will mostly engage with the humanities of game studies - particularly sociocultural and media fields.
+    \todo[add]{One sentence summary of written sources}
+However, the research question is more for the benefit of exploring an outside-in perspective on production and design, so it will be supported by practical use cases.
+    \todo[add]{One sentence summary of gaming sources}
+    \vfill
+\begin{figure}[ht]
+    \tikzperi\caption{Peripheral aspects of play}\label{peri-play}
+\end{figure}
+    \vfill
+When put together, Paratextuality, Physicality, and Popularity can be treated like X/Y/Z dimensional axes. Given any game as a source, evaluating its properties as measures along these axes yields coordinates that denote the facets of paraphernalia, preservation, and personalisation.
 \clearpage
-    \todo[add]{Game studies field and relevance of research topic and question}
-    \todo[add]{Clarify terminology such as `holistic'}
-    \todo[add]{Overview of sources}\vfill
-\begin{figure}[ht]\tikzperi\caption{Peripheral aspects of play}\label{peri-play}\end{figure}
-\section*{Prototype}
-    \todo[add]{Pitch practical part}
-    \todo[add]{Connect to writing}\vfill
+\section*{Premise}
+I have made the possibly unconventional choice of splitting the practical half of this project further into two games.
+One has the digital prototype role, while the other is rather a conceptual case study.
+The reason for that approach is a matter of positioning.
+In order to focus on analysing the outer spaces of gameplay experience, it is almost imperative that the foundation itself is built \textit{outside} said gameplay, with the design \& creation process directed \textit{inwards}.
+Keeping in mind the immutable reality of human limitations, a retrospective inquiry at the aesthetic legacy and sociocultural impact of a video game developed by a solo student, on a scale large enough to be of any consequence, is not only an infeasible undertaking, but one that would naturally steer all efforts towards actual development at the expense of design.
+Although that would be an achievement of large proportions, it would bring little value towards the purpose of this exercise.
+As it turns out, the subject of the case study does not, technically, exist.
+At least not in the form of the playable media it is supposed to to represent.
+Rather, it shall be defined through negative space, i.e., the silhouette made from all the shapes that are not intrinsic to its architecture.
+Design will largely be catered by the lost game, while implementation will be relegated to the mini game.
+The latter has the role of an interactive loading screen, serving as waiting distraction that provides some preparatory advice for the former.
+Detailed overviews for both game layers can be found in Chapter \ref{chap-4-dev} and Appendix \ref{apdx:paratxt}.
 
 \chapter{Literature Review}
-    \todo[ref,inline]{Friedrich Adolf Kittler versus Marshall McLuhan \parencite{mcluhan} on media theory}
-    \todo[ref,inline]{\citetitle{boluk-lemieux}}
-    \todo[ref,inline]{Is \citetitle{galloway} relevant?}
+    \todo[ref,inline]{Friedrich Adolf Kittler versus Marshall McLuhan \nocite{mcluhan} on media theory}
+    \todo[ref]{Metagames\nocite{boluk-lemieux}}
 
 \section{Paratextuality}  
     The initial concept by G\'{e}rard Genette \parencite*{genette} has been considerably expanded to better fit the field of game studies, and as a result has been entangled with adjacent terms from the original scholar's typology. \footnote{The five aspects of \textit{trans}textuality comprise of: \textit{inter}-, \textit{meta}-, \textit{hyper}-, \textit{archi}-, and \textit{para}-texts.}
@@ -80,22 +98,16 @@
     The formation of social rituals by the demographic over time leads to emergent paratext, stemming from reception and circulation, and physical aspects are embodied in player presence and direct interaction with the hardware.
 
 \chapter{Case Studies}
-    \todo[add]{Apply P-framework to real-life settings}\vfill
-    \todo[add]{Curate a subset of primary sources
-        }
-    \todo[add]{Support with secondary sources}
-        \todo[ref,inline]{\citebook{sicart-argo}}
-        \todo[tip,inline]{Zines and and such like Your Sinclair, Commodore User, Compute!, Antic, etc.}
+    \todo[add]{Curate primary sources\\
+        \citetitle{ufo50}; \citetitle{inscryption2021};
+        Feelies, Swordquest; Startropics; \citetitle{vectrex-bytemag};}
+    \todo[ref,inline]{Support with secondary sources:
+        \citebook{sicart-argo}, 
+        plus zines and such like Your Sinclair, Commodore User, Compute!, Antic, etc.}
+    \todo[add]{Apply P-framework}
 
-\chapter{Development}
-    \todo[add]{Chronicle research through design}
-    \todo[add]{How theory informed practice and vice versa in interrogating the question via prototype design}
-    \todo[add]{Recognise any setbacks or limitations.}
-    \todo[ref,inline]{Guidance from reading: \citebook{rusch}}
-    \todo[ref,inline]{Primary sources aiding direction: 
-        \\ Space Invaders loading mini-game and The Sims cases
-        \\ UFO50 and \cite{inscryption2021} for AU setting
-        \\ Magmavox Odyssey and Vectrex for odd hardware}
+\chapter{Development}\label{chap-4-dev}
+    \todo[ref,inline]{Guidance from Deep Games by \cite{rusch}}
 
 \section{The Lost AMOLED}
 Clever Rebel Trials was an ambitious attempt to reinvent platform exclusivity following the 4th Generation's Console Wars.
@@ -107,38 +119,24 @@ CRT is set in a retro-futuristic world with competing factions offering exclusiv
 The main gameplay loop revolves around managing a multitude of characters from the Clever Rebels Team.
 Each rebel specialises in a very narrow field of studies, which makes for entirely different character builds and run strategies.
 
-\vfill\paragraph{Notes from the GM}
-    \todo[tip]{should probably reword}
+\paragraph{Notes from the GM}
 The creator's names are anagrams using the first names of Daniel Handler, whom she also shares a birthday with, and his pseudonym Lemony Snicket. Chronologically, her lifetime closely matches the birth and growth of videogame technology, but was sadly cut short when she was only 32 years old.\par
 Although they have been swapped and scrambled into vague equivalents, most names within this alternate universe originate from the ASOUE books \parencite{asoue}.\par
 In them, there are also mentions of a secret organisation called VFD. In Snicket's world VFD stands for Volunteer Fire Department, but in ours, among other things, it means Vacuum Fluorescent Display. I found the notion of using other display type acronyms amusing, hence CRT and LED/AMOLED.\par
 Beside having a name reminiscent of NES, the LED console with its CRT game came out at a time of a literal dimensional shift in computer graphics technology - a transition from 16-bit pixels on cartridges to 32-bit polygons on optical discs with all the new rendering and memory management methodologies it brought about.
 \footnote{It also may or may not conveniently share a birthyear with yours truly.}
 
-    \vfill
-    \todo[gpt]{Skill trees progression: List studies/disciplines and what each excels and fails at}
-    \todo[add]{Setting within the fictional layer (worldbuilding comes later)}
-    \todo[gpt]{C. Narrative \& World Structure (Backstory as Architecture)
-            \\\hspace{8mm}Historical scope larger than the game itself
-            \\\hspace{8mm}Mention key institutions, past crises, and unresolved events
-            \\Identify known unknowns
-            \\\hspace{8mm}Events everyone references but noone explains fully
-            \\\hspace{8mm}Long-dead figures whose actions shape the present
-            \\\hspace{8mm}Conflicting records or interpretations
-            \\Define branching allegiance paths (conceptual)
-            \\\hspace{8mm}factions/institutions
-            \\\hspace{8mm}Each has internal logic, incomplete worldview, and ethical trade-offs}
-\section{Periphery}
-
 \section{Prototype}
-    \todo[gem]{Layout \& UI:
+    \todo[ref,inline]{Primary sources for direction: 
+        \\ Space Invaders loading mini-game and The Sims cases}
+    \todo[rtd]{Layout \& UI:
         \\\hspace{8mm}screens correspond to hand placement: left hand collects water, right hand steers the truck
         \\\hspace{8mm}controls were "canonically" separate dials (and/or even meant for two players?)
         \\\hspace{8mm}here they are tied to a single mouse which is why each is confined to a single axis
         \\\hspace{8mm}loading bar tracks the mini-game's progress under the hood
         \\\hspace{8mm}maybe our goal can be to have the player ignore the launch button once it appears
-        \\\hspace{8mm}tips serve as ambiguous clues to what the main game is about; juicier details come later on}
-    \todo[gem]{Environment:
+        \\\hspace{8mm}tips give ambiguous clues for the main game; juicier details come later on}
+    \todo[rtd]{Environment:
         \\\hspace{8mm}Trees at varied grown stages spawn over time. The bigger the tree:
             \\\hspace{16mm}the more likely it is to spawn small trees around itself
             \\\hspace{16mm}the more flammable it is, but generates larger clouds
@@ -159,83 +157,90 @@ Beside having a name reminiscent of NES, the LED console with its CRT game came 
 \begin{figure}[ht!]\includegraphics[width=0.8\textwidth]{MA-idea.png}
     \centering\caption{``Paper'' prototype}\label{paper-proto}
 \end{figure}
-    \todo[add,noinline]{wireframe with legit software}
+    \todo[app,noinline]{wireframe with legit software}
 
-    \todo[dev]{title screen}
+    \todo[dev]{opening screen}
     \todo[dev]{tree growth stages}
-    \todo[dev]{adult trees produce saplings}
-    \todo[dev]{forest coverage -> cloud size}
-    \todo[dev]{cloud size -> raindrops amount}
+    \todo[dev]{fully grown trees $\to$ saplings}
+    \todo[dev]{forest coverage $\to$ cloud size}
+    \todo[dev]{cloud size $\to$ raindrops amount}
     \todo[dev]{correct car controls}
     \todo[dev]{auto-pilot fire-truck}
     \todo[dev]{upgradable bucket}
     \todo[dev]{auto-collecting bucket}
-    \todo[dev]{score -> loading progress}
-    \todo[dev]{full bar -> start button to end game}
+    \todo[dev]{score $\to$ loading progress -> full bar $\to$ start button to end game}
+
+\section{Periphery}
+    \todo[ref,inline]{Primary sources for direction: 
+        \\ Final Fantasy jobs and Children of Morta for skill progression
+        \\ Magnavox Odyssey and Vectrex for odd hardware}
 
 \subsection*{Paraphernalia}\hfill\textit{Paratextuality + Physicality}
-    \todo[gpt]{Material design elements mediating player engagement}
+    \todo[add]{Manual and machine}
 
 \subsection*{Preservation}\hfill\textit{Physicality + Popularity}
-    \todo[add]{Describe the hardware quirks: dials, 2 screens?}
-    \todo[gpt]{The state of survival, degradation, and community efforts to archive or interpret the game.
-        \\Tchnical state of preservation - What has survived in what format?
-        \\Reasons and impact of loss}
+    \todo[add]{What has survived, in what format, and why?}
+    \todo[add]{Hardware quirks: dials, 2 screens?}
 
 \subsection*{Personalisation}\hfill\textit{Paratextuality + Popularity}
-    \todo[gpt]{Community interpretations and practices shaping legacy.
-        \\\hspace{8mm}Position as cult classic, revered for atmosphere and design philosophy
-        \\\hspace{8mm}Discuss how the game is remembered more than played
-        \\\hspace{8mm}Explore how ambiguity fosters community creativity and personal meaning-making}
+    \todo[add]{Interpretations and practices shaping legacy = discussion + review}
 
-\newpage\section{Product}
+\section{Product}
     \todo[add]{Why does the mini-game exist? (fic)
         Calibration for both platform and player
         Check controls work propery while getting used to the game overall}
-    \todo[gpt]{H. Dissertation Integration (non-fic)
-            \\A reflective section linking the games
-            \\\hspace{8mm}Mini-game as implemented theory
-            \\\hspace{8mm}Lost game as designed absence
-            \\\hspace{8mm}Ambiguity as holistic aesthetic strategy
-            \\Explicitly justify incompleteness
-            \\\hspace{8mm}As methodological choice
-            \\\hspace{8mm}As historical simulation
-            \\\hspace{8mm}As aesthetic design}
     
 \chapter{Synthesis}
-    \todo[add]{Revision of the artifact}
-    \todo[add]{Discussion on theory in practice}
-    \todo[add]{how the two informed, or clashed with, each other}
-    \todo[add]{Correlation with primary sources}
-    \todo[ref,inline]{Secondary sources that share concerns with the artifact}
+    \todo[add]{Theory in practice: how they informed and/or clashed with each other}
+    \todo[add]{Revision of the artifact(s)}
+    \todo[ref,inline]{Correlation with sources?}
     \todo[add]{Provisional answer to the research question.}
 
 \chapter{Conclusion}
-    \todo[add]{Reflect critically on what has been achieved}
-    \todo[add]{Outline implications and further open-ended research directions to build upon.}
-    \todo[ref,inline]{Recommend reading/playing not mentioned in earlier chapters}
+    \todo[add]{Critical reflection on achievement}
+    \todo[add]{Outline of implications and further research directions to build upon.}
+    \todo[ref,inline]{Recommended reading/playing not mentioned in earlier chapters}
 \vfill
     \todo[add]{\Large Final word count minus references, footnotes and appendices}
-\newpage
-\addcontentsline{toc}{chapter}{References}
-    \printbibliography[title={\LARGE Bibliography}, filter=readings]
-    \printbibliography[title={\LARGE Ludography},   type = software]
-    \printbibliography[title={\LARGE Assets},       filter = assets]
+    %     456 Abstract
+    %    +370   out of  400 exp. in Chapter 1
+    %    +290   out of 2400 exp. in Chapter 2
+    %           out of 1800 exp. in Chapter 3
+    %    +320   out of 1400 exp. in Chapter 4
+    %           out of 1600 exp. in Chapter 5
+    %           out of  400 exp. in Chapter 6
+\hfill\textit{\large Word count: 1436}
+\newpage\addcontentsline{toc}{chapter}{References}
+\printbibliography[title={\LARGE Bibliography}, filter=readings]
+\printbibliography[title={\LARGE Ludography},   type = software]
+\printbibliography[title={\LARGE Assets},       filter = assets]
 
-\newpage\appendix
-\chapter{Paratexts}
-\section{Manual}                 \label{apdx:manual}
-    \todo[gem]{gameplay details}
-    \todo[gem]{hardware descriptions}
-\section{Articles}
-\subsection*{A.2.1 \quad Magazine preview}   \label{apdx:mag-art}
-    \todo[gem]{Design page layout}
-    \todo[gem]{Write promo content}
-\subsection*{A.2.2 \quad Webpage review}     \label{apdx:web-art}
-    \todo[gem]{Scaffold HTML page}
-    \todo[gem]{Write critical content}
-\section{Mesage board(s)}       \label{apdx:msg-thr}
-    \todo[gem]{Scaffold HTML page}
-    \todo[gem]{fill thread with comments}
-    
+\newpage\newgeometry{margin=4mm}
+\titleformat{\chapter}[hang]{\bfseries\LARGE\scshape}{
+    Appendix \thechapter}{32ex}{} \appendix
+\chapter{Paratexts}                        \label{apdx:paratxt}
+\section{Manual}                           \label{apdx:manual}
+    \todo[app]{Setting and Campaigns}
+    \todo[gpt]{Key factions and events; Known unknowns
+            \\\hspace{8mm}Events everyone references but noone explains fully
+            \\\hspace{8mm}Past figures whose actions shape the present
+            \\\hspace{8mm}Conflicting records}
+    \todo[app]{Characters' Progression \& Skill trees}
+    \todo[app]{Hardware notes}
+\newpage\section{Articles}
+\subsection*{A.2.1 \quad Magazine preview} \label{apdx:mag-art}
+    \todo[app]{Write promo content}
+\begin{figure}[h!]\centering
+    \includegraphics[page=2, scale=0.64, angle=-90]{para-mag.pdf}
+    \vspace{-16mm}\\
+    \includegraphics[page=3, scale=0.64, angle=-90]{para-mag.pdf}
+\end{figure}\clearpage
+\subsection*{A.2.2 \quad Webpage review}   \label{apdx:web-art}
+    \todo[app]{Scaffold HTML page}
+    \todo[app]{Write critical content}
+\section{Message board(s)}                 \label{apdx:msg-thr}
+    \todo[app]{Scaffold HTML page}
+    \todo[app]{fill thread with user comments}
+
+\newpage\listoftodos
 \end{document}

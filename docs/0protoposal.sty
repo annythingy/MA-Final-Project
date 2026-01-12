@@ -38,14 +38,13 @@
   \defbibfilter{assets}{type=online or type=misc}
 
 \titleformat{\chapter}[hang]{\bfseries\LARGE\scshape\centering\vspace{-8mm}}{Chapter \thechapter}{.8ex}{}
-\titleformat{\section}[runin]{\bfseries\Large}{\thesection}{1.6ex}{}
+\titleformat{\section}[block]{\bfseries\Large\vspace{-8pt}}{\thesection}{8pt}{\vspace{-8pt}}
 
 \renewcommand\contentsname{Summary\vspace{-8mm}}
 \renewcommand\listfigurename{Illustrations\vspace{-8mm}}
 
 \newenvironment{my-abstract}
-  {\begin{center}\begin{singlespace}\vspace{-8mm}
-    \textsc{\LARGE Abstract \\}\vspace{8mm}}
+  {\begin{center}\begin{singlespace}}
   {\end{singlespace}\end{center}}
 
 \newcommand{\keywords}[1]{
@@ -127,10 +126,9 @@
 
 \usepackage{todonotes}
     \setuptodonotes{fancyline, size=\footnotesize}
-    \todostyle{add}{inline, color=orange!72}
-    \todostyle{tip}{noinline, color=yellow!64}
-    \todostyle{ref}{noinline, color = blue!32}
+    \todostyle{add}{inline, color=orange!64}
+    \todostyle{ref}{noinline, color = yellow!32}
     \todostyle{gpt}{inline, color = blue!16}
-    \todostyle{ask}{inline, color = green!32}
-    \todostyle{gem}{inline, color = pink!64}
+    \todostyle{rtd}{inline, color = pink!64}
     \todostyle{dev}{inline, color = purple!32}
+    \todostyle{app}{inline, color=blue!32}
