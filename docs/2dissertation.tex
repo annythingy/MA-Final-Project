@@ -11,7 +11,8 @@
     {\Large Department of Arts and Humanities, Brunel University London}
 \end{titlepage}
 
-\tableofcontents\begingroup\let\clearpage\relax\listoffigures\endgroup
+\tableofcontents\vfill
+\begingroup\let\clearpage\relax\listoffigures\endgroup\vfill
 
 \newgeometry{top=16mm,bottom=16mm}
 \chapter*{Abstract}\addcontentsline{toc}{section}{\textit{Abstract}}
@@ -42,7 +43,7 @@
     Exercising theory in practice is expected to direct the unfolding of the game's design.
     The goal that I aspire to achieve with this project is tracing a model of media creation that is elevated by its surrounding context, and also aligns with key values established in my personal game design philosophy \parencite*[GD5609,][]{myDesignPhil}, then put the resulting framework into future practice.
 \end{singlespace}\end{center}
-\restoregeometry\clearpage
+\clearpage\restoregeometry\doublespacing
 
 \chapter{Introduction}
 \section*{Extrinsic Circles}
@@ -108,26 +109,17 @@ The formation of social rituals by the demographic over time leads to emergent p
 \chapter{Case Studies}
     \todo[add]{CASE: \citetitle{ufo50}}
     \todo[add]{CASE: \citetitle{inscryption2021}}
-    \todo[add]{CASE: Feelies}
+    \todo[add]{CASE: Feelies plus \citetitle{startropics1990}}
     \todo[add]{CASE: Swordquest}
-    \todo[add]{CASE: \citetitle{startropics1990}}
     \todo[add]{CASE: \citetitle{vectrex-bytemag}}
-    \todo[ref]{Support with secondary sources}
+
+    \todo[ref]{Secondary sources support}
     \todo[add]{Apply P-framework}
 
 \chapter{Design \& Development}\label{chap-4-dnd}
 
 \section{The Lost AMOLED}
-Clever Rebel Trials was an ambitious attempt to reinvent platform exclusivity following the 4th Generation's Console Wars.
-Rather than developing a killer app for a designated system, Adelin Melony (1970-2002) set out to create a machine whose sole purpose was to play the one game that it was optimised for.
-The game itself was released in 1997 on the Ludic Entertainment Device - its dedicated Generation 4.5 console that was soon dubbed ``Addie Mel's One-Shot LED', shortened to AMOLED.
-While the approach is not unheard of (being a standard practice for arcade acabinets and many 1st and 2nd generation products) such an idea carries major risks concerning scope, audience demand and reception.
-
-CRT is set in a retro-futuristic world with competing factions offering exclusive membership perks.
-The main gameplay loop revolves around managing a multitude of characters from the Clever Rebels Team.
-Each rebel specialises in a very narrow field of studies, which makes for entirely different character builds and run strategies.
-
-\paragraph{Notes from the GM}
+    \todo[add]{Preface pls}
 The creator's names are anagrams using the first names of Daniel Handler, whom she also shares a birthday with, and his pseudonym Lemony Snicket. Chronologically, her lifetime closely matches the birth and growth of videogame technology, but was sadly cut short when she was only 32 years old.\par
 Although they have been swapped and scrambled into vague equivalents, most names within this alternate universe originate from the ASOUE books \parencite{asoue}.\par
 In them, there are also mentions of a secret organisation called VFD. In Snicket's world VFD stands for Volunteer Fire Department, but in ours, among other things, it means Vacuum Fluorescent Display. I found the notion of using other display type acronyms amusing, hence CRT and LED/AMOLED.\par
@@ -238,27 +230,21 @@ Beside having a name reminiscent of NES, the LED console with its CRT game came 
 \section{Manual}                           \label{apdx:manual}
     \todo[dev]{Lay out layout}
     \todo[app]{Setting and Campaigns}
-    \todo[gpt]{Key factions and events; Known unknowns; 
-        % Events everyone references but noone explains fully; 
-        % Past figures whose actions shape the present; 
-        % Conflicting records
-    }
     \todo[app]{Characters' Progression \& Skill trees}
     \todo[app]{Hardware notes}
-\section{Articles}
-\subsection*{A.2.1 \quad Magazine preview} \label{apdx:mag-art}
+\newpage\section{Articles}
+\subsection*{A.2.1\quad Magazine preview} \label{apdx:mag-art}
 \begin{figure}[h!]\centering
-    \todo[app]{Write promo content}
-    % \includegraphics[page=2, scale=0.64, angle=-90]{para-mag.pdf}
-    % \vspace{-16mm}
-    % \includegraphics[page=3, scale=0.64, angle=-90]{para-mag.pdf}
+    \includegraphics[scale=0.8]{magazine.pdf}
+    \todo[app]{Write promotional content}
+    \todo[app]{Stylise magazine page}
 \end{figure}
-\subsection*{A.2.2 \quad Webpage review}   \label{apdx:web-art}
+\newpage\subsection*{A.2.2 \quad Webpage review}          \label{apdx:web-art}
     \todo[dev]{Scaffold HTML page}
     \todo[app]{Write critical content}
-\section{Message board(s)}         \label{apdx:msg-thr}
+\section{Message board(s)}                 \label{apdx:msg-thr}
     \todo[dev]{Finish up webpage}
     \todo[app]{fill thread with user comments}
 
-\newpage\listoftodos[\vspace{-1in}{TO-DO List}\vspace{-16mm}]
+\newpage\listoftodos[\vspace{-32mm}{TO-DO List}\vspace{-16mm}]
 \end{document}
