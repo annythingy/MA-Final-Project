@@ -1,0 +1,59 @@
+.App {
+  text-align: justify;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.App-logo {
+  height: 8vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: sienna;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.forum-container {
+  display: flex;
+  background-color: sienna
+}
+
+.threads-list {
+  width: 20%;
+  background-color: goldenrod;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.thread-viewer {
+  width: 70%;
+  background-color: beige;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.thread-btn {
+  width: 100%;
+  background-color: peru;
+  border: none;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  word-spacing: 8px;
+}
+
+.thread-btn:hover {
+  background-color: darkorange;
+}
+
+.thread-btn.i {
+  text-align: right;
+  align-items: right;
+  justify-content: right;
+}

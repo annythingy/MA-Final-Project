@@ -47,3 +47,6 @@ mono_crash.*.json
 
 # Editor
 .vscode
+
+# Random resources
+rand/

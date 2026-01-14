@@ -14,7 +14,7 @@
 \tableofcontents\begingroup\let\clearpage\relax\listoffigures\endgroup
 
 \newgeometry{top=16mm,bottom=16mm}
-\chapter*{Abstract}\addcontentsline{toc}{section}{Abstract}
+\chapter*{Abstract}\addcontentsline{toc}{section}{\textit{Abstract}}
   \begin{center}\begin{singlespace}
     My topic of interest lies at the intersection of paratextual, corporeal, and sociocultural aspects of iconic game titles and their impact of their legacy.
     In other words, elements that lie at and/or outside the perimeter of the magic circle\parencite{huizinga}.
@@ -48,9 +48,9 @@
 \section*{Extrinsic Circles}
 Contextual influences and overall legacy impact are among the focal points for both primary and secondary sources considered in this paper.
 Theoretical examinations will mostly engage with the humanities of game studies - particularly sociocultural and media fields.
-    \todo[add]{One sentence summary of written sources}
+    \todo[end]{One sentence summary of written sources}
 However, the research question is more for the benefit of exploring an outside-in perspective on production and design, so it will be supported by practical use cases.
-    \todo[add]{One sentence summary of gaming sources}
+    \todo[end]{One sentence summary of gaming sources}
     \vfill
 \begin{figure}[ht]
     \tikzperi\caption{Peripheral aspects of play}\label{peri-play}
@@ -70,10 +70,10 @@ At least not in the form of the playable media it is supposed to to represent.
 Rather, it shall be defined through negative space, i.e., the silhouette made from all the shapes that are not intrinsic to its architecture.
 Design will largely be catered by the lost game, while implementation will be relegated to the mini game.
 The latter has the role of an interactive loading screen, serving as waiting distraction that provides some preparatory advice for the former.
-Detailed overviews for both game layers can be found in Chapter \ref{chap-4-dev} and Appendix \ref{apdx:paratxt}.
+Detailed overviews for both game layers can be found in Chapter \ref{chap-4-dnd} and Appendix \ref{apdx:paratxt}.
 
 \chapter{Literature Review}
-    \todo[ref,inline]{Friedrich Adolf Kittler versus Marshall McLuhan \nocite{mcluhan} on media theory}
+    \todo[ref,inline]{Paratextualizing Games \parencite{para-book-ftw}}
     \todo[ref]{Metagames\nocite{boluk-lemieux}}
 
 \section{Paratextuality}  
@@ -87,27 +87,35 @@ Detailed overviews for both game layers can be found in Chapter \ref{chap-4-dev}
     On these grounds, Genette's delineation is the more clear and straightforward directive for labelling purposes, while Consalvo's expansion on it draws a connection to cultural assimilation.
     Additionally, both have ties to materiality in their manifestation.
 \section{Physicality}
-        \todo[add]{proper lit review of \citetitle{bogost-platform} and \citetitle{kirschenbaum}}
-    The most tangible of the three aspects, this refers to all the material conditions in which the game is played.
-    Exclusively, this covers authentic hardware and peripherals, physical data storage, haptic features, and environmental settings.
-    In addition, paratextual supplements in physical format, e.g., paper, fall under the same category to form paraphernalia.
+    \todo[add]{proper lit review of physicality
+        % \\ \citetitle{bogost-platform}
+        % \\ \citetitle{kirschenbaum}
+    }
+The most tangible of the three aspects, this refers to all the material conditions in which the game is played.
+Exclusively, this covers authentic hardware and peripherals, physical data storage, haptic features, and environmental settings.
+In addition, paratextual supplements in physical format, e.g., paper, fall under the same category to form paraphernalia.
 \section{Popularity}
-        \todo[add]{proper lit review of \citetitle{grimes}, \citetitle{taylor}, 
-            \citetitle{gitelman}, \citetitle{hjenkins}, \citetitle{keogh}}
-    Culture and society permeate the first two aspects via informal systems of shared habits, beliefs and conventions.
-    The formation of social rituals by the demographic over time leads to emergent paratext, stemming from reception and circulation, and physical aspects are embodied in player presence and direct interaction with the hardware.
+    \todo[add]{proper lit review on popularity
+        % \\ \citetitle{grimes}
+        % \\ \citetitle{taylor}
+        % \\ \citetitle{gitelman}
+        % \\ \citetitle{hjenkins}
+        % \\ \citetitle{keogh}
+    }
+Culture and society permeate the first two aspects via informal systems of shared habits, beliefs and conventions.
+The formation of social rituals by the demographic over time leads to emergent paratext, stemming from reception and circulation, and physical aspects are embodied in player presence and direct interaction with the hardware.
 
 \chapter{Case Studies}
-    \todo[add]{Curate primary sources\\
-        \citetitle{ufo50}; \citetitle{inscryption2021};
-        Feelies, Swordquest; Startropics; \citetitle{vectrex-bytemag};}
-    \todo[ref,inline]{Support with secondary sources:
-        \citebook{sicart-argo}, 
-        plus zines and such like Your Sinclair, Commodore User, Compute!, Antic, etc.}
+    \todo[add]{CASE: \citetitle{ufo50}}
+    \todo[add]{CASE: \citetitle{inscryption2021}}
+    \todo[add]{CASE: Feelies}
+    \todo[add]{CASE: Swordquest}
+    \todo[add]{CASE: \citetitle{startropics1990}}
+    \todo[add]{CASE: \citetitle{vectrex-bytemag}}
+    \todo[ref]{Support with secondary sources}
     \todo[add]{Apply P-framework}
 
-\chapter{Development}\label{chap-4-dev}
-    \todo[ref,inline]{Guidance from Deep Games by \cite{rusch}}
+\chapter{Design \& Development}\label{chap-4-dnd}
 
 \section{The Lost AMOLED}
 Clever Rebel Trials was an ambitious attempt to reinvent platform exclusivity following the 4th Generation's Console Wars.
@@ -126,38 +134,51 @@ In them, there are also mentions of a secret organisation called VFD. In Snicket
 Beside having a name reminiscent of NES, the LED console with its CRT game came out at a time of a literal dimensional shift in computer graphics technology - a transition from 16-bit pixels on cartridges to 32-bit polygons on optical discs with all the new rendering and memory management methodologies it brought about.
 \footnote{It also may or may not conveniently share a birthyear with yours truly.}
 
-\section{Prototype}
-    \todo[ref,inline]{Primary sources for direction: 
-        \\ Space Invaders loading mini-game and The Sims cases}
-    \todo[rtd]{Layout \& UI:
-        \\\hspace{8mm}screens correspond to hand placement: left hand collects water, right hand steers the truck
-        \\\hspace{8mm}controls were "canonically" separate dials (and/or even meant for two players?)
-        \\\hspace{8mm}here they are tied to a single mouse which is why each is confined to a single axis
-        \\\hspace{8mm}loading bar tracks the mini-game's progress under the hood
-        \\\hspace{8mm}maybe our goal can be to have the player ignore the launch button once it appears
-        \\\hspace{8mm}tips give ambiguous clues for the main game; juicier details come later on}
-    \todo[rtd]{Environment:
-        \\\hspace{8mm}Trees at varied grown stages spawn over time. The bigger the tree:
-            \\\hspace{16mm}the more likely it is to spawn small trees around itself
-            \\\hspace{16mm}the more flammable it is, but generates larger clouds
-        \\\hspace{8mm}Raindrops fall at the same speed but appear faster from larger clouds
-        \\\hspace{8mm}right now mouse buttons serve as pedals for the fire truck
-        \\\hspace{8mm}already seems a bit tricky to multitask, I may automate movement
-        \\\hspace{8mm}truck and bucket upgrades for successful fire management}
-            
-% ASSETS AND ALL%
-\citetitle{kenney-1bit}; \citetitle{font-adore64}; \citetitle{crt-shader}
-    \todo[dev,noinline]{ASSET HUNT:
-        background?,
-        cursor?,
-        loading bar,
-        steering wheel,
-        sounds and animation}
+\section{The Peripheral Potpourri}
+    \todo[ref,inline]{Primary sources for direction on skill progression:
+        Final Fantasy jobs and Children of Morta}
+    \todo[ref]{Primary sources for direction on odd hardware:
+        Magnavox Odyssey, Vectrex, Playdate, DnD?}
 
-\begin{figure}[ht!]\includegraphics[width=0.8\textwidth]{MA-idea.png}
+\subsection*{Paraphernalia}\hfill\textit{Paratextuality + Physicality}
+    \todo[ref,inline]{Which manuals informed the design of mine in terms of gameplay and hardware notes}
+
+\subsection*{Preservation}\hfill\textit{Physicality + Popularity}
+    \todo[add]{What has survived, in what format, and why?}
+    \todo[add]{Hardware quirks: dials, 2 screens?}
+
+\subsection*{Personalisation}\hfill\textit{Paratextuality + Popularity}
+    \todo[add]{The role of discussions on interpretations and practices in shaping legacy}
+
+\section{The Salvaged Software}
+    \todo[add]{Why does it exist? 
+        Platform and player calibration - check controls while getting acclimatised}
+
+\subsection*{Prototype}
+    \todo[dev]{wireframe with legit software}
+\begin{figure}[ht!]
+    \includegraphics[width=0.8\textwidth]{MA-idea.png}
     \centering\caption{``Paper'' prototype}\label{paper-proto}
 \end{figure}
-    \todo[app,noinline]{wireframe with legit software}
+    \todo[ref,inline]{Primary sources for direction: 
+        Space Invaders loading mini-game and The Sims cases}
+    \todo[rtd]{Layout \& UI devnotes
+        % screens correspond to hand placement: left hand collects water, right hand steers the truck;
+        % controls were "canonically" separate dials and/or other analogue components;
+        % here they are tied to a single mouse which is why each is confined to a single axis;
+        % loading bar tracks the mini-game's progress under the hood;
+        % maybe our goal can be to have the player ignore the launch button once it appears;
+        % tips give ambiguous clues for the main game; juicier details come later on
+    }
+    \todo[rtd]{Environment devnotes
+        % Trees at varied grown stages spawn over time. The bigger the tree:
+        %     the more likely it is to spawn small trees around itself
+        %     the more flammable it is, but generates larger clouds
+        % Raindrops fall at the same speed but appear faster from larger clouds;
+        % right now mouse buttons serve as pedals for the fire truck;
+        % already seems a bit tricky to multitask, I may automate movement;
+        % truck and bucket upgrades for successful fire management;
+    }
 
     \todo[dev]{opening screen}
     \todo[dev]{tree growth stages}
@@ -168,47 +189,41 @@ Beside having a name reminiscent of NES, the LED console with its CRT game came 
     \todo[dev]{auto-pilot fire-truck}
     \todo[dev]{upgradable bucket}
     \todo[dev]{auto-collecting bucket}
-    \todo[dev]{score $\to$ loading progress -> full bar $\to$ start button to end game}
-
-\section{Periphery}
-    \todo[ref,inline]{Primary sources for direction: 
-        \\ Final Fantasy jobs and Children of Morta for skill progression
-        \\ Magnavox Odyssey and Vectrex for odd hardware}
-
-\subsection*{Paraphernalia}\hfill\textit{Paratextuality + Physicality}
-    \todo[add]{Manual and machine}
-
-\subsection*{Preservation}\hfill\textit{Physicality + Popularity}
-    \todo[add]{What has survived, in what format, and why?}
-    \todo[add]{Hardware quirks: dials, 2 screens?}
-
-\subsection*{Personalisation}\hfill\textit{Paratextuality + Popularity}
-    \todo[add]{Interpretations and practices shaping legacy = discussion + review}
-
-\section{Product}
-    \todo[add]{Why does the mini-game exist? (fic)
-        Calibration for both platform and player
-        Check controls work propery while getting used to the game overall}
+    \todo[dev]{score $\to$ loading progress $\to$ full bar $\to$ start button to end game}
+    
+    \todo[ref,inline]{\cite{kenney-1bit}; \cite{font-adore64}; \cite{crt-shader}}
+    \todo[dev,noinline]{ASSETS HUNTING:
+        background?,
+        cursor?,
+        loading bar,
+        steering wheel,
+        sounds and animation
+    }
     
 \chapter{Synthesis}
     \todo[add]{Theory in practice: how they informed and/or clashed with each other}
-    \todo[add]{Revision of the artifact(s)}
+    \todo[end]{Revision of the artifact(s)}
     \todo[ref,inline]{Correlation with sources?}
-    \todo[add]{Provisional answer to the research question.}
+    \todo[end]{Provisional answer to the research question.}
 
 \chapter{Conclusion}
-    \todo[add]{Critical reflection on achievement}
-    \todo[add]{Outline of implications and further research directions to build upon.}
-    \todo[ref,inline]{Recommended reading/playing not mentioned in earlier chapters}
+    \todo[end]{Critical reflection on achievement}
+    \todo[end]{Outline of implications and further research directions to build upon.}
+    \todo[end,inline]{Recommended reading/playing not mentioned in earlier chapters
+        % \\ Friedrich Adolf Kittler versus Marshall McLuhan on media theory
+        % \\ \citebook{sicart-argo}
+        % \\ \citebook{rusch}
+    }
 \vfill
-    \todo[add]{\Large Final word count minus references, footnotes and appendices}
-    %     456 Abstract
-    %    +370   out of  400 exp. in Chapter 1
-    %    +290   out of 2400 exp. in Chapter 2
-    %           out of 1800 exp. in Chapter 3
-    %    +320   out of 1400 exp. in Chapter 4
-    %           out of 1600 exp. in Chapter 5
-    %           out of  400 exp. in Chapter 6
+    \todo[end]{\Large Final word count minus references, footnotes and appendices
+        %     456 Abstract
+        %    +370   out of  400 exp. in Chapter 1
+        %    +290   out of 2400 exp. in Chapter 2
+        %           out of 1800 exp. in Chapter 3
+        %    +320   out of 1400 exp. in Chapter 4
+        %           out of 1600 exp. in Chapter 5
+        %           out of  400 exp. in Chapter 6
+    }
 \hfill\textit{\large Word count: 1436}
 \newpage\addcontentsline{toc}{chapter}{References}
 \printbibliography[title={\LARGE Bibliography}, filter=readings]
@@ -218,29 +233,32 @@ Beside having a name reminiscent of NES, the LED console with its CRT game came 
 \newpage\newgeometry{margin=4mm}
 \titleformat{\chapter}[hang]{\bfseries\LARGE\scshape}{
     Appendix \thechapter}{32ex}{} \appendix
+
 \chapter{Paratexts}                        \label{apdx:paratxt}
 \section{Manual}                           \label{apdx:manual}
+    \todo[dev]{Lay out layout}
     \todo[app]{Setting and Campaigns}
-    \todo[gpt]{Key factions and events; Known unknowns
-            \\\hspace{8mm}Events everyone references but noone explains fully
-            \\\hspace{8mm}Past figures whose actions shape the present
-            \\\hspace{8mm}Conflicting records}
+    \todo[gpt]{Key factions and events; Known unknowns; 
+        % Events everyone references but noone explains fully; 
+        % Past figures whose actions shape the present; 
+        % Conflicting records
+    }
     \todo[app]{Characters' Progression \& Skill trees}
     \todo[app]{Hardware notes}
-\newpage\section{Articles}
+\section{Articles}
 \subsection*{A.2.1 \quad Magazine preview} \label{apdx:mag-art}
-    \todo[app]{Write promo content}
 \begin{figure}[h!]\centering
-    \includegraphics[page=2, scale=0.64, angle=-90]{para-mag.pdf}
-    \vspace{-16mm}\\
-    \includegraphics[page=3, scale=0.64, angle=-90]{para-mag.pdf}
-\end{figure}\clearpage
+    \todo[app]{Write promo content}
+    % \includegraphics[page=2, scale=0.64, angle=-90]{para-mag.pdf}
+    % \vspace{-16mm}
+    % \includegraphics[page=3, scale=0.64, angle=-90]{para-mag.pdf}
+\end{figure}
 \subsection*{A.2.2 \quad Webpage review}   \label{apdx:web-art}
-    \todo[app]{Scaffold HTML page}
+    \todo[dev]{Scaffold HTML page}
     \todo[app]{Write critical content}
-\section{Message board(s)}                 \label{apdx:msg-thr}
-    \todo[app]{Scaffold HTML page}
+\section{Message board(s)}         \label{apdx:msg-thr}
+    \todo[dev]{Finish up webpage}
     \todo[app]{fill thread with user comments}
 
-\newpage\listoftodos
+\newpage\listoftodos[\vspace{-1in}{TO-DO List}\vspace{-16mm}]
 \end{document}

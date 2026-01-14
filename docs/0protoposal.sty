@@ -1,6 +1,5 @@
 \ProvidesPackage{0protoposal}
 \usepackage[a4paper, margin=1in, top=2.4cm, headheight=24mm, marginparwidth=2cm]{geometry}
-%\usepackage[T1]{fontenc}\usepackage{libertinus}
 \usepackage{newtxtext,newtxmath} % Times New Roman
 \usepackage[table,dvipsnames]{xcolor}
 \usepackage{fancyhdr}\pagestyle{fancy}
@@ -124,11 +123,12 @@
   \vspace{-8mm}\tikzchapters
 }
 
-\usepackage{todonotes}
-    \setuptodonotes{fancyline, size=\footnotesize}
-    \todostyle{add}{inline, color=orange!64}
-    \todostyle{ref}{noinline, color = yellow!32}
-    \todostyle{gpt}{inline, color = blue!16}
-    \todostyle{rtd}{inline, color = pink!64}
-    \todostyle{dev}{inline, color = purple!32}
-    \todostyle{app}{inline, color=blue!32}
+\usepackage[colorinlistoftodos]{todonotes}
+  \setuptodonotes{fancyline, size=\footnotesize}
+   \todostyle{ref}{noinline, color = yellow!32}
+   \todostyle{add}{  inline, color = orange!64}
+   \todostyle{rtd}{  inline, color = purple!32}
+   \todostyle{dev}{  inline, color = purple!64}
+   \todostyle{app}{  inline, color = blue!32}
+   \todostyle{gpt}{  inline, color = blue!16}
+   \todostyle{end}{  inline, color = gray!48}
