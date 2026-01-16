@@ -45,7 +45,7 @@
 \end{singlespace}\end{center}
 \clearpage\restoregeometry\doublespacing
 
-\chapter{Introduction}\label{chap-1-intro}
+\chapter{Introduction\label{chap-1-intro}}
 \section*{Extrinsic Circles}
 Contextual influences and overall legacy impact are among the focal points for both primary and secondary sources considered in this paper.
 Theoretical examinations will mostly engage with the humanities of game studies - particularly sociocultural and media fields.
@@ -54,7 +54,7 @@ However, the research question is more for the benefit of exploring an outside-i
     \todo[end]{One sentence summary of gaming sources}
     \vfill
 \begin{figure}[ht]
-    \tikzperi\caption{Peripheral aspects of play}\label{peri-play}
+    \tikzperi\caption{Peripheral aspects of play\label{peri-play}}
 \end{figure}
     \vfill
 When put together, Paratextuality, Physicality, and Popularity can be treated like X/Y/Z axes in a coordinate system. Given any game as a source, evaluating its properties as measures along these axes yields coordinates that denote the facets of paraphernalia, preservation, and personalisation.
@@ -125,7 +125,7 @@ The formation of social rituals by the demographic over time leads to emergent p
     \todo[ref]{Secondary sources support}
     \todo[add]{Apply P-framework}
 
-\chapter{Design \& Development}\label{chap-4-dnd}
+\chapter{Design \& Development\label{chap-4-dnd}}
 
 \section{The Lost AMOLED}
     \todo[add]{Preface pls}
@@ -146,7 +146,7 @@ Beside having a name reminiscent of NES, the LED console with its CRT game came 
         % 1 SNES/SMD and 1 PS on gameplay
         % hardware notes
         }
-    \nocite{tex-dnd}
+    \nocite{tex-dnd}\nocite{tunic}
 
 
 \subsection*{Preservation}\hfill\textit{Physicality + Popularity}
@@ -164,7 +164,7 @@ Beside having a name reminiscent of NES, the LED console with its CRT game came 
     \todo[dev]{wireframe with legit software}
 \begin{figure}[ht!]
     \includegraphics[width=0.8\textwidth]{img/MA-idea.png}
-    \centering\caption{``Paper'' prototype}\label{paper-proto}
+    \centering\caption{``Paper'' prototype\label{paper-proto}}
 \end{figure}
     \todo[ref,inline]{Primary sources for direction: 
         Space Invaders loading mini-game and The Sims cases}
@@ -236,28 +236,43 @@ Beside having a name reminiscent of NES, the LED console with its CRT game came 
 \printbibliography[title={\LARGE Assets},       filter = assets]
 
 \newgeometry{margin=4mm}
-\titleformat{\chapter}[hang]{\bfseries\LARGE\scshape}{Appendix \thechapter}{32ex}{} \appendix
+\titleformat{\chapter}[hang]{\bfseries\LARGE\scshape}{Appendix \thechapter}{16em}{}\appendix
 
-\chapter{Paratexts}                        \label{apdx:paratxt}
-\section{Manual}                           \label{apdx:manual}
-    \todo[dev]{Lay out layout}
-    \todo[dev]{Controls}
-    \todo[app]{Setting and Gameplay}
-    \todo[app]{Characters' Progression \& Skill trees}
-    \todo[app]{Hardware notes}
-\newpage\section{Articles}
-\subsection*{A.2.1\quad Magazine preview} \label{apdx:mag-art}
+\chapter{Paratexts\label{apdx:paratxt}}                        
+\vspace{-16mm}
+\section{Manual\label{apdx:manual}}
+\vspace*{-4mm}                     
+    % \todo[dev]{Lay out layout}
+    % \todo[dev]{Controls}
+    % \todo[app]{Setting and Gameplay}
+    % \todo[app]{Characters' Progression \& Skill trees}
+\begin{figure}[ht!]\centering
+    \includegraphics[page=1,width=0.48\textwidth]{man/manual.pdf}
+    \includegraphics[page=2,width=0.48\textwidth]{man/manual.pdf}
+    \\\vspace{2mm}
+    \includegraphics[page=3,width=0.48\textwidth]{man/manual.pdf}
+    \includegraphics[page=4,width=0.48\textwidth]{man/manual.pdf}
+    \\\vspace{2mm}
+    \includegraphics[page=5,width=0.48\textwidth]{man/manual.pdf}
+    \includegraphics[page=6,width=0.48\textwidth]{man/manual.pdf}
+\end{figure}
+\newpage
+
+\section{Articles}
+\subsection*{A.2.1\quad Magazine preview\label{apdx:mag-art}} 
 \begin{figure}[h!]\centering
     \includegraphics[scale=0.8]{mag/magazine.pdf}
     \todo[app]{Write promotional content}
     \todo[app]{Stylise magazine page}\nocite{tex-paper}
 \end{figure}
-\newpage\subsection*{A.2.2 \quad Webpage review}          \label{apdx:web-art}
+\newpage\subsection*{A.2.2 \quad Webpage review\label{apdx:web-art}}     
     \todo[dev]{Scaffold HTML page}
     \todo[app]{Write critical content}
-\section{Message board(s)}                 \label{apdx:msg-thr}
+\section{Message board(s)\label{apdx:msg-thr}}                 
     \todo[dev]{Finish up webpage}
     \todo[app]{fill thread with user comments}
+    
+\chapter{More Media\label{apdx:media}} 
 
-\newpage\listoftodos[\vspace{-32mm}{TO-DO List}\vspace{-16mm}]
+    \newpage\listoftodos[\vspace{-32mm}{TO-DO List}\vspace{-16mm}]
 \end{document}
