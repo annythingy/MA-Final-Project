@@ -16,16 +16,19 @@
 \usepackage{setspace}
 \usepackage{csquotes}
 \usepackage{titlesec}
+\usepackage{caption}
+\captionsetup{ margin=1cm,  singlelinecheck=false}
+
 
 \usepackage[backend=biber, style=apa, sorting=nyt]{biblatex}
 % \usepackage[style=numeric]{biblatex} % TEMP/HACK: to count refs
   \ExecuteBibliographyOptions{doi=true,url=false}
   \DeclareFieldFormat{doi}{\url{https://doi.org/#1}} %\newline if needed
-  \DeclareFieldFormat{addendum}{\newline Available at: \url{#1}} %\newline if needed
+  \DeclareFieldFormat{addendum}{\newline Available at: \url{#1/}} %\newline if needed
   \AtBeginBibliography{\raggedright}
-  \addbibresource{bib/reads.bib}
-  \addbibresource{bib/plays.bib}
-  \addbibresource{bib/tools.bib}
+  \addbibresource{ref/reads.bib}
+  \addbibresource{ref/plays.bib}
+  \addbibresource{ref/utils.bib}
   \DeclareCiteCommand{\citeauthor}
     {\usebibmacro{prenote}}
     {\printnames[given-family]{author}} % for full name
