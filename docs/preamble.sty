@@ -1,4 +1,4 @@
-\ProvidesPackage{0protoposal}
+\ProvidesPackage{preamble}
 \usepackage[a4paper, margin=1in, top=2.4cm, headheight=24mm, marginparwidth=2cm]{geometry}
 \usepackage{newtxtext,newtxmath} % Times New Roman
 \usepackage[table,dvipsnames]{xcolor}
@@ -21,10 +21,11 @@
 % \usepackage[style=numeric]{biblatex} % TEMP/HACK: to count refs
   \ExecuteBibliographyOptions{doi=true,url=false}
   \DeclareFieldFormat{doi}{\url{https://doi.org/#1}} %\newline if needed
+  \DeclareFieldFormat{addendum}{\newline Available at: \url{#1}} %\newline if needed
   \AtBeginBibliography{\raggedright}
-  \addbibresource{reads.bib}
-  \addbibresource{plays.bib}
-  \addbibresource{tools.bib}
+  \addbibresource{bib/reads.bib}
+  \addbibresource{bib/plays.bib}
+  \addbibresource{bib/tools.bib}
   \DeclareCiteCommand{\citeauthor}
     {\usebibmacro{prenote}}
     {\printnames[given-family]{author}} % for full name
@@ -33,8 +34,8 @@
   \NewDocumentCommand{\citebook}{m}{\citetitle{#1}, a book by \citeauthor{#1} \parencite*{#1}}
   \NewDocumentCommand{\citework}{m}{\textit{\citetitle{#1}}, an article by \citeauthor{#1} \parencite*{#1}}
   \NewDocumentCommand{\citeconf}{m}{\textit{\citetitle{#1}}, a conference paper by \citeauthor{#1} \parencite*{#1}}
-  \defbibfilter{readings}{type=article or type=book or type=collection or type=inproceedings or type=unpublished}
-  \defbibfilter{assets}{type=online or type=misc}
+  \defbibfilter{readings}{type=article or type=book or type=collection or type=incollection or type=inproceedings or type=online or type=unpublished}
+  \defbibfilter{assets}{type=www or type=image or type=misc}
 
 \titleformat{\chapter}[hang]{\bfseries\LARGE\scshape\centering\vspace{-8mm}}{Chapter \thechapter}{.8ex}{}
 \titleformat{\section}[block]{\bfseries\Large\vspace{-8pt}}{\thesection}{8pt}{\vspace{-8pt}}

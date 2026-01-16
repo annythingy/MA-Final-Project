@@ -1,10 +1,10 @@
 \documentclass[12pt,oneside]{book}
-\usepackage{0protoposal}
+\usepackage{preamble}
 %\setuptodonotes{disable}
 
 \begin{document}
 \begin{titlepage}\centering
-    \begin{figure}[ht!]\centering\includegraphics{bruni-logo.png}\end{figure}
+    \begin{figure}[ht!]\centering\includegraphics{img/bruni-logo.png}\end{figure}
     \vfill\textbf{\Huge Playing the Periphery}\vspace{24mm}\\
     {\huge A thesis submitted for the degree of\\MA Games Design\\
     \vspace{8mm}by}\vspace{8mm}\\\texttt{\LARGE 2\>4\>4\>1\>8\>7\>1}\vfill
@@ -45,7 +45,7 @@
 \end{singlespace}\end{center}
 \clearpage\restoregeometry\doublespacing
 
-\chapter{Introduction}
+\chapter{Introduction}\label{chap-1-intro}
 \section*{Extrinsic Circles}
 Contextual influences and overall legacy impact are among the focal points for both primary and secondary sources considered in this paper.
 Theoretical examinations will mostly engage with the humanities of game studies - particularly sociocultural and media fields.
@@ -57,8 +57,12 @@ However, the research question is more for the benefit of exploring an outside-i
     \tikzperi\caption{Peripheral aspects of play}\label{peri-play}
 \end{figure}
     \vfill
-When put together, Paratextuality, Physicality, and Popularity can be treated like X/Y/Z dimensional axes. Given any game as a source, evaluating its properties as measures along these axes yields coordinates that denote the facets of paraphernalia, preservation, and personalisation.
-\clearpage
+When put together, Paratextuality, Physicality, and Popularity can be treated like X/Y/Z axes in a coordinate system. Given any game as a source, evaluating its properties as measures along these axes yields coordinates that denote the facets of paraphernalia, preservation, and personalisation.
+
+The model presented in Figure \ref{peri-play} is by no means indented to contradict or overrule any existing discourse on the matter.
+It is solely an amalgamation of theoretical templates and personal pattern recognition assembling a blueprint of my own perspective on the external elements factoring in the periphery of play.
+
+%\clearpage
 \section*{Premise}
 I have made the possibly unconventional choice of splitting the practical half of this project further into two games.
 One has the digital prototype role, while the other is rather a conceptual case study.
@@ -74,19 +78,24 @@ The latter has the role of an interactive loading screen, serving as waiting dis
 Detailed overviews for both game layers can be found in Chapter \ref{chap-4-dnd} and Appendix \ref{apdx:paratxt}.
 
 \chapter{Literature Review}
-    \todo[ref,inline]{Paratextualizing Games \parencite{para-book-ftw}}
-    \todo[ref]{Metagames\nocite{boluk-lemieux}}
+    \todo[ref,inline]{Maybe Metagames \parencite{boluk-lemieux}}
 
-\section{Paratextuality}  
-    The initial concept by G\'{e}rard Genette \parencite*{genette} has been considerably expanded to better fit the field of game studies, and as a result has been entangled with adjacent terms from the original scholar's typology. \footnote{The five aspects of \textit{trans}textuality comprise of: \textit{inter}-, \textit{meta}-, \textit{hyper}-, \textit{archi}-, and \textit{para}-texts.}
-    However, both approaches can be integrated into my own, owing to the generous overlap between the three types of external context.\par
-    When strictly categorising cases, Genette's definition regards 
-    ``Elements that form a figurative threshold of a text and ground it in a socio-historical context. [...] must be created by the text’s producers or their associates".
-    These can be promotional materials, introductory sequences, menus, credits, making-ofs, contextual information about authors.\par
-    While preserving Genette's wording on which elements are included, Consalvo's interpretation assigns ``...no limitations on authorship or cultural status" \parencite*{consalvo}. 
-    This is akin to \textit{cultural epiphenomena} and allows consideration of more media like ``criticism and journalism, user discussions, fan fiction and fan art, streaming, trans-media storytelling" \parencite{svelch}.\par
-    On these grounds, Genette's delineation is the more clear and straightforward directive for labelling purposes, while Consalvo's expansion on it draws a connection to cultural assimilation.
-    Additionally, both have ties to materiality in their manifestation.
+\section{Preface}\par
+The structure posed in Chapter \ref{chap-1-intro} does not necessarily suggest the three dimensions and their derived facets are exclusive of each other.
+On the contrary, their overlap is considerable, especially in the case of paratextuality.
+Examples given in scholarly overviews, e.g., multiple entries from ``Paratextualising Games'' \parencite{para-book-ftw} vary greatly in terms of which aspects are touched upon.
+For this reason, such instances will be examined in the most relevant to their case section.
+
+\section{Paratextuality}\par
+The initial concept by G\'{e}rard Genette \parencite*{genette} has been considerably expanded to better fit the field of game studies, and as a result has been entangled with adjacent terms from the original scholar's typology.
+\footnote{The five aspects of \textit{trans}textuality comprise of: \textit{inter}-, \textit{meta}-, \textit{hyper}-, \textit{archi}-, and \textit{para}-texts\parencite{chandler-semi}.}
+When strictly categorising cases, Genette's definition regards 
+``Elements that form a figurative threshold of a text and ground it in a socio-historical context. [...] must be created by the text’s producers or their associates".
+These can be promotional materials, introductory sequences, menus, credits, making-ofs, contextual information about authors.\par
+While preserving Genette's wording on which elements are included, Consalvo's interpretation assigns ``...no limitations on authorship or cultural status" \parencite*{consalvo}. 
+This is akin to \textit{cultural epiphenomena} and allows consideration of more media like ``criticism and journalism, user discussions, fan fiction and fan art, streaming, trans-media storytelling" \parencite{svelch}.\par
+On these grounds, Genette's delineation is the more clear and straightforward directive for labelling purposes, while Consalvo's expansion on it draws a connection to cultural assimilation.
+Each approach has its merits, but for the sake of delineation I mean to employ a middleground reading, with Genette's rigid boundary tracing Paratextuality on its own
 \section{Physicality}
     \todo[add]{proper lit review of physicality
         % \\ \citetitle{bogost-platform}
@@ -133,7 +142,12 @@ Beside having a name reminiscent of NES, the LED console with its CRT game came 
         Magnavox Odyssey, Vectrex, Playdate, DnD?}
 
 \subsection*{Paraphernalia}\hfill\textit{Paratextuality + Physicality}
-    \todo[ref,inline]{Which manuals informed the design of mine in terms of gameplay and hardware notes}
+    \todo[ref,inline]{Which manuals informed the design of mine?
+        % 1 SNES/SMD and 1 PS on gameplay
+        % hardware notes
+        }
+    \nocite{tex-dnd}
+
 
 \subsection*{Preservation}\hfill\textit{Physicality + Popularity}
     \todo[add]{What has survived, in what format, and why?}
@@ -149,7 +163,7 @@ Beside having a name reminiscent of NES, the LED console with its CRT game came 
 \subsection*{Prototype}
     \todo[dev]{wireframe with legit software}
 \begin{figure}[ht!]
-    \includegraphics[width=0.8\textwidth]{MA-idea.png}
+    \includegraphics[width=0.8\textwidth]{img/MA-idea.png}
     \centering\caption{``Paper'' prototype}\label{paper-proto}
 \end{figure}
     \todo[ref,inline]{Primary sources for direction: 
@@ -181,16 +195,15 @@ Beside having a name reminiscent of NES, the LED console with its CRT game came 
     \todo[dev]{auto-pilot fire-truck}
     \todo[dev]{upgradable bucket}
     \todo[dev]{auto-collecting bucket}
-    \todo[dev]{score $\to$ loading progress $\to$ full bar $\to$ start button to end game}
+    \todo[dev]{score $\to$ loading progress $\to$ full bar $\to$ press start to end game}
     
     \todo[ref,inline]{\cite{kenney-1bit}; \cite{font-adore64}; \cite{crt-shader}}
-    \todo[dev,noinline]{ASSETS HUNTING:
+    \todo[dev,noinline]{ASSET HUNT:
         background?,
         cursor?,
         loading bar,
         steering wheel,
-        sounds and animation
-    }
+        sounds and animation}
     
 \chapter{Synthesis}
     \todo[add]{Theory in practice: how they informed and/or clashed with each other}
@@ -222,22 +235,22 @@ Beside having a name reminiscent of NES, the LED console with its CRT game came 
 \printbibliography[title={\LARGE Ludography},   type = software]
 \printbibliography[title={\LARGE Assets},       filter = assets]
 
-\newpage\newgeometry{margin=4mm}
-\titleformat{\chapter}[hang]{\bfseries\LARGE\scshape}{
-    Appendix \thechapter}{32ex}{} \appendix
+\newgeometry{margin=4mm}
+\titleformat{\chapter}[hang]{\bfseries\LARGE\scshape}{Appendix \thechapter}{32ex}{} \appendix
 
 \chapter{Paratexts}                        \label{apdx:paratxt}
 \section{Manual}                           \label{apdx:manual}
     \todo[dev]{Lay out layout}
-    \todo[app]{Setting and Campaigns}
+    \todo[dev]{Controls}
+    \todo[app]{Setting and Gameplay}
     \todo[app]{Characters' Progression \& Skill trees}
     \todo[app]{Hardware notes}
 \newpage\section{Articles}
 \subsection*{A.2.1\quad Magazine preview} \label{apdx:mag-art}
 \begin{figure}[h!]\centering
-    \includegraphics[scale=0.8]{magazine.pdf}
+    \includegraphics[scale=0.8]{mag/magazine.pdf}
     \todo[app]{Write promotional content}
-    \todo[app]{Stylise magazine page}
+    \todo[app]{Stylise magazine page}\nocite{tex-paper}
 \end{figure}
 \newpage\subsection*{A.2.2 \quad Webpage review}          \label{apdx:web-art}
     \todo[dev]{Scaffold HTML page}
