@@ -24,7 +24,9 @@ flowerwall_crt="*res://addons/flowerwall_postprocess/scenes/flowerwall_pp.tscn"
 
 window/size/viewport_width=1024
 window/size/viewport_height=768
+window/size/mode=2
 window/size/resizable=false
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
