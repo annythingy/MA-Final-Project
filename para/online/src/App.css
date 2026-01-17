@@ -2,42 +2,32 @@
   text-align: justify;
   font-family: 'Courier New', Courier, monospace;
 }
-
-.App-logo {
-  height: 8vmin;
-  pointer-events: none;
-}
-
 .App-header {
-  background-color: sienna;
   min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 2%;
 }
 
 .forum-container {
+  width: 1280px;
+  margin: auto;
   display: flex;
   background-color: sienna
 }
-
 .threads-list {
   width: 20%;
   background-color: goldenrod;
   padding: 10px;
   box-sizing: border-box;
 }
-
 .thread-viewer {
   width: 70%;
   background-color: beige;
   padding: 10px;
   box-sizing: border-box;
 }
-
 .thread-btn {
   width: 100%;
   background-color: peru;
@@ -47,13 +37,59 @@
   cursor: pointer;
   word-spacing: 8px;
 }
-
 .thread-btn:hover {
   background-color: darkorange;
 }
-
 .thread-btn.i {
   text-align: right;
   align-items: right;
   justify-content: right;
+}
+
+.web-container {
+  display: block;
+  width: 1280px;
+  margin: auto;
+  background-color: beige
+}
+.top{
+  padding: 4em;
+}
+.end {
+  padding: 0 8em 8em 0;
+}
+.title{
+  color:darkslategray
+}
+.subtitle{
+  color:darkslateblue
+}
+.by {
+  color: gray
+}
+.article {
+  padding: 0 8em 0 8em;
+}
+.review-body {
+  padding: 2em;;
+}
+.img-flame {
+    float: right;
+    width: 128px;
+    height: 128px;
+}
+.badge-cat {
+  margin: 8px;
+}
+.badge-tag {
+  margin: 0 8pt 0 8pt;
+  font-variant-alternates: historical-forms;
+}
+.tags {
+  display: flex;
+  justify-content: center;
+}
+.about {
+  width: 768px;
+  margin: 8px 32px 16px auto;
 }
