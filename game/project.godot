@@ -32,6 +32,10 @@ window/stretch/mode="canvas_items"
 
 enabled=PackedStringArray("res://addons/flowerwall_postprocess/plugin.cfg")
 
+[global_group]
+
+fire=""
+
 [input]
 
 pedalGas={

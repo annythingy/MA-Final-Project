@@ -25,9 +25,17 @@ func _on_area_entered(drop: Area2D) -> void:
 	drop.queue_free()
 	if water_collected >= tank_capacity:
 		water_collected = 0
-		$"../../World/Village/Rain".spawn_cloud(4+randf()*8,1)
+		upgrade()
 	$WaterTank/TextureBar.value = water_collected
 	$WaterTank/Amount.text = str(water_collected)
 
+func upgrade():
+	$Sprite2D.scale.x +=0.2
+	$CollisionShape2D.scale.x += 0.2
+	$"../../World/Village/Rain".spawn_cloud(4+randf()*8,1)
+
 func _on_check_button_toggled(toggled_on: bool) -> void:
 	idle_on = toggled_on
+
+func _on_button_pressed() -> void:
+	upgrade()

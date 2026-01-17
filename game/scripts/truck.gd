@@ -14,13 +14,12 @@ func _physics_process(delta):
 		goBackwards(delta)
 	elif Input.is_mouse_button_pressed(3 as MouseButton):
 		brake(delta)
-	else:
-		idle()
-
-	if move_and_collide(velocity * delta):
-		velocity = Vector2.ZERO
-		print($Area2D.get_overlapping_bodies())
-		
+	else: idle()
+	var collision_data = move_and_collide(velocity * delta)
+	if collision_data:
+		if collision_data.get_collider().age  && collision_data.get_collider().age < 3:
+			collision_data.get_collider().wither()
+		else: velocity = Vector2.ZERO
 
 func goForwards(delta):
 	velocity += acceleration_rate * delta
@@ -28,11 +27,11 @@ func goForwards(delta):
 func goBackwards(delta):
 	velocity -= acceleration_rate * delta
 
+func idle():
+	velocity = velocity.lerp(Vector2.ZERO, 0.02)
+
 func brake(delta):
 	var speed = velocity.length()
 	speed -= brake_rate * delta
 	speed = max(speed, 0)
 	velocity = velocity.normalized() * speed if speed > 0 else Vector2.ZERO
-
-func idle():
-	velocity = velocity.lerp(Vector2.ZERO, 0.02)

@@ -1,0 +1,28 @@
+[gd_scene load_steps=9 format=3 uid="uid://n58oy5o61v6c"]
+
+[ext_resource type="Script" uid="uid://cpqqwcf464vgp" path="res://scripts/tree.gd" id="1_omb14"]
+[ext_resource type="Texture2D" uid="uid://b5ne708fub1mh" path="res://assets/images/tree1.png" id="2_1gtcl"]
+[ext_resource type="Texture2D" uid="uid://dp7tudwv3e0us" path="res://assets/images/tree.png" id="2_874r4"]
+[ext_resource type="Texture2D" uid="uid://dmdb8jagsocn3" path="res://assets/images/tree2.png" id="3_r0kve"]
+[ext_resource type="Texture2D" uid="uid://dacn5qrr7r3tc" path="res://assets/images/tree3.png" id="4_2i8fu"]
+[ext_resource type="Texture2D" uid="uid://bhtitrckq08kr" path="res://assets/images/tree0.png" id="6_r0kve"]
+[ext_resource type="Texture2D" uid="uid://dj0dw17i6a2jl" path="res://assets/images/flame.png" id="8_ego7h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2cic4"]
+radius = 24.0
+height = 64.0
+
+[node name="Tree" type="StaticBody2D"]
+script = ExtResource("1_omb14")
+tree_tex1 = ExtResource("2_1gtcl")
+tree_tex2 = ExtResource("3_r0kve")
+tree_tex3 = ExtResource("4_2i8fu")
+tree_tex4 = ExtResource("2_874r4")
+tree_tex0 = ExtResource("6_r0kve")
+flame_tex = ExtResource("8_ego7h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1gtcl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_2cic4")
