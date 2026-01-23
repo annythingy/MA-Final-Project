@@ -36,7 +36,7 @@ func upgrade():
 	$Sprite2D.scale.x +=up_incr
 	$CollisionShape2D.scale.x += up_incr
 	$WaterTank.position.x -= up_incr * 16
-	$"../../World/Rain".spawn_cloud(4+randf()*8)
+	$"../../World/Rain".spawn_cloud()
 
 func _on_check_button_toggled(toggled_on: bool) -> void:
 	idle_on = toggled_on

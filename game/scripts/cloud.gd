@@ -19,18 +19,20 @@ func _physics_process(delta: float) -> void:
 	make_rain()
 
 func set_props(x):
-	width = x
+	width = 4+min(x,8)
 	wind = randi() % 2 * 2 - 1
-	float_speed = 128.0 / x
-	drop_rate = x / 12.8
-	var altitude = x * ratio * 9.2
-	$Sprite2D.scale = Vector2(x,x/ratio)
-	position = Vector2(randf()*428,686-altitude)
+	float_speed = 128.0 / width
+	drop_rate = width / 12.8
+	$Sprite2D.scale = Vector2(width,width/ratio)
+	var x_px = width*ratio
+	var frame = 512 + x_px if wind==-1 else -x_px
+	var altitude = width * ratio * 9.2
+	position = Vector2(frame,686-altitude)
 	
 func move_about(delta):
 	position.x += delta * wind * float_speed
 	var sprite_pos_x = $Sprite2D.global_position.x
-	if sprite_pos_x < 32|| sprite_pos_x > 512:
+	if (sprite_pos_x < 32 && wind == -1) || (sprite_pos_x > 512 && wind == 1):
 		queue_free()
 	#if sprite_pos_x > 256-width*scale.x: $Sprite2D.self_modulate = Color(1,1,1,255/sprite_pos_x)
 

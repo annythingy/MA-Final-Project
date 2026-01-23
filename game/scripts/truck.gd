@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var acceleration_rate = Vector2(-128, -256) 
+var acceleration_rate = Vector2(128, 512) 
 var brake_rate = 64.0  # speed units per second squared (scalar)
 var car_width = 32
 	
@@ -30,16 +30,16 @@ func _physics_process(delta):
 		else: velocity = Vector2.ZERO
 			
 func goForwards(delta):
-	velocity.x += acceleration_rate.x * delta
-
-func goBackwards(delta):
 	velocity.x -= acceleration_rate.x * delta
 
+func goBackwards(delta):
+	velocity.x += acceleration_rate.x * delta
+
 func goUp(delta):
-	velocity.y += acceleration_rate.y * delta
+	position.y -= acceleration_rate.y * delta
 	
 func goDown(delta):
-	velocity.y -= acceleration_rate.y * delta
+	position.y += acceleration_rate.y * delta
 	
 func idle():
 	velocity = velocity.lerp(Vector2.ZERO, 0.02)
@@ -54,7 +54,7 @@ func splash():
 	$Area2D/CollisionShape2D2.disabled = false
 	var fire = $Area2D.get_overlapping_areas()
 	for f in fire:
-		f.get_parent().set_off_fire()
+		f.get_parent().put_off_fire()
 	await get_tree().create_timer(1.0).timeout
 	$Area2D/CollisionShape2D2.disabled = true
 	

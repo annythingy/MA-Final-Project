@@ -8,6 +8,9 @@ func _ready() -> void:
 	for i in 12:		spawn_tree_at(Vector2(544 + randf() * 448 , 32 + randf() * 448))
 	ignite()
 
+func log_fire_out():
+	$"../../UI".fire_score += 1
+
 func spawn_tree_at(pos: Vector2):
 	var tree := tree_scene.instantiate()
 	tree.position = pos

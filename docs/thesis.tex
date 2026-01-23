@@ -17,6 +17,7 @@
 \newgeometry{top=16mm,bottom=16mm}
 \chapter*{Abstract}\addcontentsline{toc}{section}{\textit{Abstract}}
   \begin{center}\begin{singlespace}
+    \todo[end]{refresh abstract}
     My topic of interest lies at the intersection of paratextual, corporeal, and sociocultural aspects of iconic game titles and their impact of their legacy.
     In other words, elements that lie at and/or outside the perimeter of the magic circle\parencite{huizinga}.
     Paratext consists of surrounding media not included in the game itself but strongly influencing how the experience is accessed, framed, and understood.
@@ -46,6 +47,7 @@
 \clearpage\restoregeometry\doublespacing
 
 \chapter{Introduction\label{chap-1-intro}}
+    \addcontentsline{tdo}{chapter}{INTRO\vspace{-2pt}}
 \section*{Extrinsic Circles}
 Contextual influences and overall legacy impact are among the focal points for both primary and secondary sources considered in this paper.
 Theoretical examinations will mostly engage with the humanities of game studies - particularly sociocultural and media fields.
@@ -62,7 +64,6 @@ When put together, Paratextuality, Physicality, and Popularity can be treated li
 The model presented in Figure \ref{peri-play} is by no means indented to contradict or overrule any existing discourse on the matter.
 It is solely an amalgamation of theoretical templates and personal pattern recognition assembling a blueprint of my own perspective on the external elements factoring in the periphery of play.
 
-%\clearpage
 \section*{Premise}
 I have made the possibly unconventional choice of splitting the practical half of this project further into two games.
 One has the digital prototype role, while the other is rather a conceptual case study.
@@ -78,6 +79,7 @@ The latter has the role of an interactive loading screen, serving as waiting dis
 Detailed overviews for both game layers can be found in Chapter \ref{chap-4-dnd} and Appendix \ref{apdx:paratxt}.
 
 \chapter{Literature Review}
+    \addcontentsline{tdo}{chapter}{LIT REVIEW\vspace{-2pt}}
     \todo[ref,inline]{Maybe Metagames \parencite{boluk-lemieux}}
 
 \section{Preface}\par
@@ -116,9 +118,14 @@ Culture and society permeate the first two aspects via informal systems of share
 The formation of social rituals by the demographic over time leads to emergent paratext, stemming from reception and circulation, and physical aspects are embodied in player presence and direct interaction with the hardware.
 
 \chapter{Case Studies}
+    \addcontentsline{tdo}{chapter}{CASES\vspace{-2pt}}
+\section{UFO50}
     \todo[add]{CASE: \citetitle{ufo50}}
+\section{Inscryption}
     \todo[add]{CASE: \citetitle{inscryption2021}}
+\section{Feelies + StarTropics}
     \todo[add]{CASE: Feelies plus \citetitle{startropics}}
+\section{Swordquest and ARGs}
     \todo[add]{CASE: Swordquest}
     \todo[add]{CASE: \citetitle{vectrex-bytemag}}
 
@@ -126,9 +133,10 @@ The formation of social rituals by the demographic over time leads to emergent p
     \todo[add]{Apply P-framework}
 
 \chapter{Design \& Development\label{chap-4-dnd}}
+    \addcontentsline{tdo}{chapter}{DES\&DEV\vspace{-2pt}}
 
 \section{The Lost AMOLED}
-    \todo[add]{Preface pls}
+    \todo[add]{Preface main game idea}
 The creator's names are anagrams using the first names of Daniel Handler, whom she also shares a birthday with, and his pseudonym Lemony Snicket. Chronologically, her lifetime closely matches the birth and growth of videogame technology, but was sadly cut short when she was only 32 years old.\par
 Although they have been swapped and scrambled into vague equivalents, most names within this alternate universe originate from the ASOUE books \parencite{asoue}.\par
 In them, there are also mentions of a secret organisation called VFD. In Snicket's world VFD stands for Volunteer Fire Department, but in ours, among other things, it means Vacuum Fluorescent Display. I found the notion of using other display type acronyms amusing, hence CRT and LED/AMOLED.\par
@@ -166,57 +174,66 @@ Beside having a name reminiscent of NES, the LED console with its CRT game came 
     \includegraphics[width=0.8\textwidth]{img/MA-idea.png}
     \centering\caption{``Paper'' prototype\label{paper-proto}}
 \end{figure}
-    \todo[ref,inline]{Primary sources for direction: 
-        Space Invaders loading mini-game and The Sims cases}
-    \todo[rtd]{Layout \& UI devnotes
-        % screens correspond to hand placement: left hand collects water, right hand steers the truck;
-        % controls were "canonically" separate dials and/or other analogue components;
-        % here they are tied to a single mouse which is why each is confined to a single axis;
-        % loading bar tracks the mini-game's progress under the hood;
-        % maybe our goal can be to have the player ignore the launch button once it appears;
-        % tips give ambiguous clues for the main game; juicier details come later on
-    }
-    \todo[rtd]{Environment devnotes
-        % Trees at varied grown stages spawn over time. The bigger the tree:
-        %     the more likely it is to spawn small trees around itself
-        %     the more flammable it is, but generates larger clouds
-        % Raindrops fall at the same speed but appear faster from larger clouds;
-        % right now mouse buttons serve as pedals for the fire truck;
-        % already seems a bit tricky to multitask, I may automate movement;
-        % truck and bucket upgrades for successful fire management;
-    }
+    \todo[ref,inline]{Primary sources for direction: Space Invaders loading mini-game, The Sims cases}
+    \todo[rtd]{Layout \& UI devnotes}
+        screens correspond to hand placement: left hand collects water, right hand steers the truck;
+        \\ controls were "canonically" separate dials and/or other analogue components;
+        \\   here they are tied to a single mouse which is why each is confined to a single axis;
+        \\   mouse buttons serve as pedals for the fire truck;
+        \\   already seems a bit tricky to multitask, may need to automate movement;
+        \\ loading bar tracks the mini-game's progress under the hood; does not sync with score increase but updates at an interval to be less obvious
+        \\ shows Start when full
+        \\   maybe our goal can be to have the player ignore the launch button once it appears;
+        \\ My metagame score as a designer is the superfluous scoring that a player gets byond the 100\%
+        \\ tips give ambiguous clues for the main game; juicier details come later on
+    
+    \todo[rtd]{Environment devnotes}\nocite{dragonslair1983}
+        Trees at spawn over time; Four growth stages.
+        \\   Saplings appear in the vicinity of fully grown trees
+        \\ The bigger the tree, the more flammable it is, but generating larger clouds
+        \\
+        \\ Clouds float in and out of the lower frame, causing rainfall for water collection
+        \\ Raindrops fall at the same speed but appear faster from larger clouds;
+        \\ The larger the cloud, the higher up it is positioned
+        \\ Why not wind
+        \\
+        \\ Firetruck 
+        \\ upgrades for successful incident management;
+        \\   fires extinguished $\to$ larger bucket
+        \\   water collected    $\to$ better truck?
+        \\   auto-pilot for both vehicles
+        \\ \nocite{flood}
+        \\ what if: FLOOD (random idea) !?
 
     \todo[dev]{opening screen}
-    \todo[dev]{forest coverage $\to$ cloud size $\to$ rain amount}
-    \todo[dev]{correct car controls}
     \todo[dev]{auto-pilot  truck}
     \todo[dev]{auto-pilot bucket}
-    \todo[dev]{progress $\to$ loading}
-    
-    \todo[ref,inline]{\cite{kenney-1bit}; \cite{font-adore64}; \cite{crt-shader}}
-    \todo[dev,noinline]{ASSET HUNT:
-        background?,
-        cursor?,
-        loading bar,
-        steering wheel,
-        sounds and animation}
+    \paragraph{Assets}
+        \citetitle{crt-shader}
+        \citetitle{font-adore64}
+        \citetitle{kenney-1bit} for most sprites
+        \citetitle{kenney-monorpg} for city backdrop tiling
+        \citetitle{kenney-pixelplat} for backdrop background and pipes
+    \todo[dev,noinline]{ASSET HUNT: steering wheel?, sounds, animation?}
     
 \chapter{Synthesis}
-    \todo[add]{Theory in practice: how they informed and/or clashed with each other}
+    \addcontentsline{tdo}{chapter}{SYNTHESIS\vspace{-2pt}}
+    \todo[add]{Theory in practice: how they inform/clash with each other}
     \todo[end]{Revision of the artifact(s)}
     \todo[ref,inline]{Correlation with sources?}
-    \todo[end]{Provisional answer to the research question.}
+    \todo[end]{Provisional answer to the research question}
 
 \chapter{Conclusion}
+    \addcontentsline{tdo}{chapter}{OUTRO\vspace{-2pt}}
     \todo[end]{Critical reflection on achievement}
     \todo[end]{Outline of implications and further research directions to build upon.}
-    \todo[end,inline]{Recommended reading/playing not mentioned in earlier chapters
+    \todo[end,inline]{Recommended reading/playing not mentioned earlier
         % \\ Friedrich Adolf Kittler versus Marshall McLuhan on media theory
         % \\ \citebook{sicart-argo}
         % \\ \citebook{rusch}
     }
 \vfill
-    \todo[end]{\Large Final word count minus references, footnotes and appendices
+    \todo[end]{\large Final word count minus references, footnotes and appendices 
         %     456 Abstract
         %    +370   out of  400 exp. in Chapter 1
         %    +290   out of 2400 exp. in Chapter 2
@@ -226,17 +243,25 @@ Beside having a name reminiscent of NES, the LED console with its CRT game came 
         %           out of  400 exp. in Chapter 6
     }
 \hfill\textit{\large Word count: 1436}
-\newpage\addcontentsline{toc}{chapter}{References}
+
+\renewcommand{\headrulewidth}{0pt}\newgeometry{margin=16mm}
+\newpage\addcontentsline{toc}{chapter}{References}\fancyhf{}
 \printbibliography[title={\LARGE Bibliography}, filter=readings]
-\printbibliography[title={\LARGE Ludography},   type = software]
+\printbibliography[title={\LARGE Ludography},   filter =  games]
+\DeclareFieldFormat{url}{\\\hspace*{-8mm}{\scriptsize\faExternalLink*}\quad\url{#1/}}
 \printbibliography[title={\LARGE Assets},       filter = assets]
 
 \newgeometry{margin=4mm}
 \titleformat{\chapter}[hang]{\bfseries\LARGE\scshape}{Appendix \thechapter}{16em}{}\appendix
+    \addcontentsline{tdo}{chapter}{APPEND\vspace{-2pt}}
 
 \chapter{Paratexts\label{apdx:paratxt}}                        
 \vspace{-16mm}
 \section{Manual\label{apdx:manual}}
+    \todo[dev]{\textbf{\normalsize A1:} Lay out layout}
+    \todo[dev]{\textbf{\normalsize A1:} Controls}
+    \todo[app]{\textbf{\normalsize A1:} Setting and Gameplay}
+    \todo[app]{\textbf{\normalsize A1:} Characters' Progression \& Skill trees}
 \vspace*{-4mm}                     
 \begin{figure}[ht!]\centering
     \includegraphics[page=1,width=0.48\textwidth]{man/manual.pdf}
@@ -255,19 +280,17 @@ Beside having a name reminiscent of NES, the LED console with its CRT game came 
 \begin{figure}[h!]\centering
     \includegraphics[scale=0.8]{mag/magazine.pdf}
     \todo[app]{Write promotional content}
+    \todo[app]{Interview}
     \todo[app]{Stylise magazine page}\nocite{tex-paper}
 \end{figure}
-\newpage
-    \todo[dev]{\textbf{\normalsize A1:} Lay out layout}
-    \todo[dev]{\textbf{\normalsize A1:} Controls}
-    \todo[app]{\textbf{\normalsize A1:} Setting and Gameplay}
-    \todo[app]{\textbf{\normalsize A1:} Characters' Progression \& Skill trees}
 \subsection*{A.2.2 \quad Webpage review\label{apdx:web-art}}     
-    \todo[dev]{Scaffold HTML page}
+    \todo[dev]{Format HTML page}
     \todo[app]{Write critical content}
 \section{Message board(s)\label{apdx:msg-thr}}                 
     \todo[dev]{Finish up webpage}
     \todo[app]{fill thread with user comments}
 
-    \newpage\listoftodos[\vspace{-32mm}{TO-DO List}\vspace{-16mm}]
+    \renewcommand{\cftchapfont}{\bfseries\small}
+    \setlength{\cftbeforechapskip}{0pt}
+    \newpage\listoftodos[\vspace{-32mm}{TO-DO List\large}\vspace{-16mm}]
 \end{document}

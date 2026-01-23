@@ -13,7 +13,8 @@ var tips := [
 
 var index := 0
 var timer = 0.0
-var progress_rate = 1
+var progress_rate = 4
+var fire_score = 0
 
 func _ready():
 	$ProgressBar/StartButton.visible = false
@@ -24,7 +25,7 @@ func _process(delta: float) -> void:
 	timer += delta
 	if timer >= progress_rate:
 		timer = 0
-		$ProgressBar.value += 25
+		$ProgressBar.value += fire_score
 		
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		$Steering/Mouse.texture = tex_mouse1

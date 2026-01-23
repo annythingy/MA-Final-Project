@@ -15,7 +15,7 @@ var is_burning = false
 var timer = 0.0
 var decay_left = 6
 var burn_left = 5
-var age_rate = .8
+var age_rate = 2
 	
 func _process(delta: float) -> void:
 	timer += delta
@@ -53,11 +53,11 @@ func set_on_fire():
 	flame.add_to_group('fire')
 	is_burning = true
 
-
-func set_off_fire():
+func put_off_fire():
 	is_burning = false
 	for f in get_children():
 		if f.is_in_group('fire'):
+			get_parent().log_fire_out()
 			remove_child(f)
 
 func burn():
