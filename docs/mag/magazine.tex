@@ -1,47 +1,69 @@
-\documentclass{papertex}
-\usepackage[T1]{fontenc}\usepackage{tgbonum}
+\documentclass[12pt]{papertex}
+\usepackage[T1]{fontenc}\usepackage{utopia}
 \usepackage{setspace}\onehalfspacing
 \newgeometry{margin=8mm}
-\usepackage{color}
-\definecolor{background}{RGB}{250, 240, 230}
-\pagecolor{background}
+\usepackage[dvipsnames]{xcolor}
 \pagestyle{empty}
+\usepackage{watermark}
+\watermark{\centering\put(-64,-848){\includegraphics{../../rand/background-groovy.jpeg}}}
+\newcommand{\boxstyle}{Ovalbox} % shadowbox, doublebox, ovalbox, Ovalbox, lines
 
 \begin{document}
-
-\begin{news}{2}
+\color{Goldenrod}
+\begin{news}{3}
     {CRT for the AMOLED}{Clever Rebel Trials \textit{Release Preview}}
     {April 1997 \hfill p. 42}{art-1}
     \authorandplace{By April Kittler}{Paleo-Country}
 
 \begin{center}
-    \includegraphics[width=0.08\textwidth]{../../game/assets/images/flame.png}\quad
-    \includegraphics[width=0.08\textwidth]{../../game/assets/images/tree.png}\quad
-    \includegraphics[width=0.08\textwidth]{../../game/assets/images/droplet.png}
+    \includegraphics[width=0.06\textwidth]{../../game/assets/images/flame.png}\quad
+    \includegraphics[width=0.06\textwidth]{../../game/assets/images/tree.png}\quad
+    \includegraphics[width=0.06\textwidth]{../../game/assets/images/droplet.png}
 \end{center}
 
 Rather than developing a killer app for a specific system, Adelin Melony (1970-2002) set out to create a machine whose sole purpose was to play the one game that it was optimised for.
 
 Clever Rebel Trials is an ambitious attempt to reinvent platform exclusivity following the 4th Generation's Console Wars.
 
-The game itself runs on the Ludic Entertainment Device.
-This dedicated Generation 4½ console has already been affectionately dubbed ``Addie Mel's One-Shot LED'.
+The game itself will run exclusively on the Ludic Entertainment Device.
+This \underline{dedicated} Generation 4½ console already has an endearing nickname, collectively coined by optimistic fans and sceptical industry pros:
+\textit{``Addie Mel's One-Shot LED''}.
 
-While the approach is not unheard of (being a standard practice for arcade acabinets and many 1st and 2nd generation products) such an idea carries major risks concerning scope, audience demand and reception.
+While the approach is not unheard of (being a standard practice for arcade acabinets and many 1st and 2nd generation products), it's still pretty precarious as platform picks go. Naturally, such unorthodox ideas carry major risks concerning scope and audience appeal.
 
-\columntitle{Ovalbox}{\fontfamily{qcr}\selectfont Setting and Campaigns}\par 
+\columntitle{\boxstyle}{\fontfamily{lmtt}\selectfont Setting and Campaigns}\par 
 CRT is set in a retro-futuristic world with competing factions offering exclusive membership perks.\par
 Past figures who shaped the present status quo\par
 Events everyone references but nobody explains
 
-\columntitle{Ovalbox}{\fontfamily{qcr}\selectfont Known Unknowns}\par
+\columntitle{\boxstyle}{\fontfamily{lmtt}\selectfont Known Unknowns}\par
 Conflicting records
 
 The main gameplay loop revolves around managing a multitude of characters from the Clever Rebels Team.
 Each rebel specialises in a very narrow field of studies, which makes for entirely different character builds and run strategies.
 \end{news}
 
-\vfill\hrule\vfill
-\begin{news}{2}{Title}{Subtitle}{}{art-2} Lorem ipsum mon ami. \end{news}\vfill
+\color{GreenYellow}
+\begin{shortnews}{2}{\textit{Interview}\hfill}{\hfill\small Interviewee Name}{art-2}
+    Aliquam lacus ex, maximus vel neque lobortis, blandit elementum. Donec commodo iaculis risus, et viverra nisi venenatis quis.
+    \columntitle{lines}{\normalfont\textit{``Suspendisse non ligula vel nisi facilisis tristique.''}}
+
+    Suspendisse quis pulvinar neque. Aliquam et vulputate.Donec blandit commodo urna vel ornare. Aliquam a lectus sit amet justo iaculis sollicitudin. Nulla a pharetra nisi. Fusce vehicula velit eu arcu lacinia lacinia. Phasellus vitae libero mauris. 
+    
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra ut sem eu rhoncus. Nullam eleifend vulputate tellus dignissim porta. Nunc augue mauris, efficitur eu facilisis vitae, feugiat luctus tortor. Duis pharetra sollicitudin nunc a laoreet. Integer porttitor nulla at leo aliquet blandit non nec eros. Nam arcu ex, condimentum quis nisl sed, volutpat tempus lectus.
+
+    \columntitle{lines}{\normalfont\textit{``Nam imperdiet dolor sed orci interdum.''}}
+
+    Mauris eu turpis velit. Sed euismod dictum purus, eget posuere enim malesuada a. Praesent vehicula, lectus ut ullamcorper accumsan, eros ante elementum augue, in luctus ex erat eget nunc. Nunc in massa dictum, luctus dui eget, laoreet sapien.
+
+    \expandedtitle{lines}{\large\normalfont\textit{
+        ``Donec pellentesque orci feugiat, tincidunt quam nec, euismod nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.''}}
+
+    Aliquam vulputate dapibus magna, at consequat quam porttitor a. Nulla interdum porttitor mauris gravida fermentum. Sed nec metus mi. Sed eget mi in odio lobortis hendrerit eu ac tellus. Mauris fringilla tellus ac maximus ultricies.
+
+    Integer ut augue tincidunt leo vehicula rhoncus eget non diam. Phasellus eu eros odio. Mauris ex ex, vehicula eget lorem id, pellentesque gravida risus. Donec nibh libero, bibendum ac nunc nec, pellentesque sodales ligula. Aliquam erat volutpat. Aenean eget magna quam. Nunc nec massa consequat nunc facilisis tristique ut in sem. Aenean consequat, nunc sit amet mattis maximus, lacus mauris egestas ex, vel suscipit magna nibh sed enim. Cras quis fermentum lorem, eu sollicitudin enim.
+
+    Praesent euismod, libero in facilisis facilisis, erat erat fringilla risus, in convallis erat odio a ligula. Curabitur euismod, augue in facilisis cursus, libero erat congue nunc, in dictum libero risus a justo. In hac habitasse platea dictumst. Nullam euismod, nisl vel consectetur interdum, nisl nisi aliquet nunc, at convallis ligula erat nec nulla. 
+\end{shortnews}
 
 \end{document}

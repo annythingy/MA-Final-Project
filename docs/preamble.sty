@@ -1,60 +1,22 @@
 \ProvidesPackage{preamble}
-\usepackage[a4paper, margin=1in, top=2.4cm, headheight=24mm, marginparwidth=2cm]{geometry}
+\usepackage[a4paper, margin=1in, top=24mm, headheight=24mm, marginparwidth=2cm]{geometry}
 \usepackage{newtxtext,newtxmath} % Times New Roman
-\usepackage[table,dvipsnames]{xcolor}
 \usepackage{fancyhdr}\pagestyle{fancy}
 \usepackage{xurl}
 \usepackage{hyperref}
-\hypersetup{colorlinks=true, linkcolor={Sepia}, urlcolor={MidnightBlue}, citecolor={Mahogany}}
 \usepackage{enumitem} 
 \usepackage{xparse}    
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{marginnote}
 \usepackage{fontawesome5}
-\setlength{\arrayrulewidth}{0.16mm}\arrayrulecolor{gray}
 \usepackage{setspace}
 \usepackage{csquotes}
 \usepackage{titlesec}
 \usepackage{caption}
-\captionsetup{ margin=1cm,  singlelinecheck=false}
-
-
-\usepackage[backend=biber, style=apa, sorting=nyt]{biblatex}
-% \usepackage[style=numeric]{biblatex} % TEMP/HACK: to count refs
-  \ExecuteBibliographyOptions{doi=true,url=false}
-  \DeclareFieldFormat{doi}{\url{https://doi.org/#1}} %\newline if needed
-  \DeclareFieldFormat{addendum}{\newline Available at: \url{#1/}} %\newline if needed
-  \AtBeginBibliography{\raggedright}
-  \addbibresource{ref/reads.bib}
-  \addbibresource{ref/plays.bib}
-  \addbibresource{ref/utils.bib}
-  \DeclareCiteCommand{\citeauthor}
-    {\usebibmacro{prenote}}
-    {\printnames[given-family]{author}} % for full name
-    {\multicitedelim}
-    {\usebibmacro{postnote}}
-  \NewDocumentCommand{\citebook}{m}{\citetitle{#1}, a book by \citeauthor{#1} \parencite*{#1}}
-  \NewDocumentCommand{\citework}{m}{\textit{\citetitle{#1}}, an article by \citeauthor{#1} \parencite*{#1}}
-  \NewDocumentCommand{\citeconf}{m}{\textit{\citetitle{#1}}, a conference paper by \citeauthor{#1} \parencite*{#1}}
-  \defbibfilter{readings}{type=article or type=book or type=collection or type=incollection or type=inproceedings or type=online or type=unpublished}
-  \defbibfilter{assets}{type=www or type=image or type=misc}
-
-\titleformat{\chapter}[hang]{\bfseries\LARGE\scshape\centering\vspace{-8mm}}{Chapter \thechapter}{.8ex}{}
-\titleformat{\section}[block]{\bfseries\Large\vspace{-8pt}}{\thesection}{8pt}{\vspace{-8pt}}
-
-\renewcommand\contentsname{Summary\vspace{-8mm}}
-\renewcommand\listfigurename{Illustrations\vspace{-8mm}}
-
-\newenvironment{my-abstract}
-  {\begin{center}\begin{singlespace}}
-  {\end{singlespace}\end{center}}
-
-\newcommand{\keywords}[1]{
-  \reversemarginpar\marginnote{\footnotesize\textsc{Keywords:}\textit{#1}}[4cm]
-  \normalmarginpar} % aesthetics, authenticity, experience, immersion, materiality, metagaming, nostalgia, paraphernalia, paratext, preservation, retrospective, transmedia
-
-\newcommand{\wordCount}[2]{\vspace{-8mm}\hfill\textit{\small(#1/#2 words)}}
+\usepackage[table,dvipsnames]{xcolor}
+\usepackage{wrapfig}\usepackage{graphicx}
+\setlength{\arrayrulewidth}{0.16mm}\arrayrulecolor{gray}
 
 \definecolor{chap0}{RGB}{100, 200, 200}
 \definecolor{chap1}{RGB}{100, 150, 200}
@@ -62,6 +24,50 @@
 \definecolor{chap3}{RGB}{150, 100, 200}
 \definecolor{chap4}{RGB}{200, 100, 200}
 \definecolor{chapZ}{RGB}{250, 100, 200}
+
+\captionsetup{margin=1cm,  singlelinecheck=false}
+\hypersetup{colorlinks=true, linkcolor={Sepia}, urlcolor={MidnightBlue}, citecolor={Mahogany}}
+
+\usepackage{tocloft}  
+\usepackage[backend=biber, style=apa, sorting=nyt]{biblatex}
+% \usepackage[style=numeric]{biblatex} % TEMP/HACK: to count refs
+  \addbibresource{ref/reads.bib}
+  \addbibresource{ref/plays.bib}
+  \addbibresource{ref/utils.bib}
+
+  \ExecuteBibliographyOptions{doi=true}
+ % \AtBeginBibliography{\raggedright}
+  \DeclareFieldFormat{doi}{\url{https://doi.org/#1}}
+  \DeclareFieldFormat{version}{#1}
+  \DeclareCiteCommand{\citeauthor}
+    {\usebibmacro{prenote}}
+    {\printnames[given-family]{author}} % for full name
+    {\multicitedelim}
+    {\usebibmacro{postnote}}
+  \defbibfilter{readings}{type=book or type=article or type=online 
+    or type=collection or type=incollection or type=inproceedings or type=unpublished}
+  \defbibfilter{assets}{type=image or type=misc or type=www}
+  \defbibfilter{games}{type=manual or type=software}
+  \NewDocumentCommand{\citegame}{m}{\mkbibemph{\citefield{#1}{title}} \parencite{#1}}
+  \NewDocumentCommand{\citebook}{m}
+    {\citetitle{#1}, a book by \citeauthor{#1} \parencite*{#1}}
+  \NewDocumentCommand{\citework}{m}
+    {\textit{\citetitle{#1}}, an article by \citeauthor{#1} \parencite*{#1}}
+  \NewDocumentCommand{\citeconf}{m}
+    {\textit{\citetitle{#1}}, a conference paper by \citeauthor{#1} \parencite*{#1}}
+
+
+\titleformat{\chapter}[hang]{\bfseries\LARGE\scshape\centering\vspace{-8mm}}{Chapter \thechapter}{.8ex}{}
+\titleformat{\section}[block]{\bfseries\Large\vspace{-8pt}}{\thesection}{8pt}{\vspace{-8pt}}
+
+\renewcommand\contentsname{\vspace{-8mm}Summary\vspace{-8mm}}
+\renewcommand\listfigurename{\vspace{-8mm}Illustrations\vspace{-8mm}}
+
+\newcommand{\keywords}[1]{% aesthetics, authenticity, experience, immersion, materiality, metagaming, nostalgia, paraphernalia, paratext, preservation, retrospective, transmedia
+  \reversemarginpar\marginnote{\footnotesize\textsc{Keywords:}\textit{#1}}[4cm]
+  \normalmarginpar}
+
+\newcommand{\wordCount}[2]{\vspace{-8mm}\hfill\textit{\small(#1/#2 words)}}
 
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows, arrows.meta}
@@ -90,27 +96,25 @@
     % Central node
     \node (play) [pTile] {\textsc{Play}};
     % Radius of the circle
-    \def\radius{32mm}
+    \def\radius{16mm}
     % Peripheral nodes in circular layout
-    \node (paratxt) [pTile, above of=play] {\textsc{Paratextuality}};
-    \node (physics) [pTile, below of=play, xshift=-36mm, yshift=12mm] {\textsc{Physicality}};
-    \node (popular) [pTile, below of=play, xshift= 36mm, yshift=12mm] {\textsc{Popularity}};
+    \node (paratxt) [pTile, above of=play, yshift=4mm] {\textsc{Paratextuality}};
+    \node (physics) [pTile, below of=play, xshift=-48mm, yshift=4mm] {\textsc{Physicality}};
+    \node (popular) [pTile, below of=play, xshift= 48mm, yshift=4mm] {\textsc{Popularity}};
     % Connections to central node
-    \draw [very thin, >=triangle 45, <->] (play) -- (paratxt);
-    \draw [very thin, >=triangle 45, <->] (play) -- (physics);
-    \draw [thin, >=triangle 45, <->] (play) -- (popular);
+    \draw [>=triangle 45, <->, thin] (play) -- (paratxt);
+    \draw [>=triangle 45, <->, thin] (play) -- (physics);
+    \draw [>=triangle 45, <->, thin] (play) -- (popular);
     % Dotted lines and labels
-    \path [dotted, very thick] (paratxt) edge[bend right] node[midway, left]  {\small\textit{paraphernalia}} (physics);
-    %\draw [dotted,thick](paratxt)--(popular)node[midway,right,xshift=4mm,yshift=-4mm]{\small\textit{or proliferation?}};
-    \path [dotted, very thick] (paratxt) edge[bend left] node[midway, right]  {\small\textit{personalization}} (popular);
-    \path [dotted, very thick] (physics) edge[bend right] node[midway, below] {\small\textit{preservation}} (popular);
+    \draw [dotted, thick] (paratxt)--(physics) node[midway, left] {\small\textit{paraphernalia}};
+    \draw [dotted, thick] (paratxt)--(popular) node[midway,right] {\small\textit{personalization}};
+    \draw [dotted, thick] (physics)--(popular) node[midway,below] {\small\textit{preservation}};
     % Circular dashed periphery
-    \draw [violet, thick, dashed] (play) circle (16mm);
-    %\node (play) [left, gray, xshift=8mm, yshift=-2cm] {\footnotesize\textit{periphery}};
-    \begin{scope}[transform canvas={xscale=-1,yscale=-1}]
-        \path[decorate,decoration={text along path, text={perimeter},text align=center}] (1.78,0) arc[start angle=0,end angle=-300,radius=1.78];
-        \path[decorate,decoration={text along path, text={perimeter},text align=center}] (1.78,0) arc[start angle=0, end angle=-70,radius=1.78];
-        \path[decorate,decoration={text along path, text={perimeter},text align=center}] (1.88,0) arc[start angle=0, end angle=180,radius=1.88];
+    \draw [violet, thick, dashed] (play) circle (12mm);
+    \begin{scope}[transform canvas={scale=-1}]
+        \path[decorate,decoration={text along path, text={perimeter},text align=center}] (1.24,0) arc[start angle=0, end angle=-300,radius=1.24];
+        \path[decorate,decoration={text along path, text={perimeter},text align=center}] (1.24,0) arc[start angle=0, end angle= -70,radius=1.24];
+        \path[decorate,decoration={text along path, text={perimeter},text align=center}] (1.48,0) arc[start angle=0, end angle= 180,radius=1.48];
     \end{scope}
   \end{tikzpicture}\end{center}
 }
@@ -130,9 +134,10 @@
 \usepackage[colorinlistoftodos]{todonotes}
   \setuptodonotes{fancyline, size=\footnotesize}
    \todostyle{ref}{noinline, color = yellow!32}
-   \todostyle{add}{  inline, color = orange!64}
-   \todostyle{rtd}{  inline, color = purple!32}
-   \todostyle{dev}{  inline, color = purple!64}
-   \todostyle{app}{  inline, color = blue!32}
-   \todostyle{gpt}{  inline, color = blue!16}
-   \todostyle{end}{  inline, color = gray!48}
+    \todostyle{add}{ inline, color = orange!64}
+    \todostyle{rtd}{ inline, color = purple!32}
+    \todostyle{dev}{ inline, color = purple!64}
+    \todostyle{app}{ inline, color = blue!32}
+    \todostyle{gpt}{ inline, color = blue!16}
+    \todostyle{end}{ inline, color = gray!48}
+  \newcommand{\todochap}[1]{\addcontentsline{tdo}{chapter}{#1}}
