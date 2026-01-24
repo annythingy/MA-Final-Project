@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm5dp0lpbu4vn"
-path="res://.godot/imported/platformer-backgrounds.png-876228be97f050593bdd1b0699d483b3.ctex"
+uid="uid://cw5qghrbwhrxv"
+path="res://.godot/imported/mouse-3.png-5f737a904bdd68bea1766cdcef3ccbc9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/platformer-backgrounds.png"
-dest_files=["res://.godot/imported/platformer-backgrounds.png-876228be97f050593bdd1b0699d483b3.ctex"]
+source_file="res://assets/images/mouse-3.png"
+dest_files=["res://.godot/imported/mouse-3.png-5f737a904bdd68bea1766cdcef3ccbc9.ctex"]
 
 [params]
 

@@ -10,6 +10,7 @@ var tips := [
 @export var tex_mouse0: Texture2D
 @export var tex_mouse1: Texture2D
 @export var tex_mouse2: Texture2D
+@export var tex_mouse3: Texture2D
 
 var index := 0
 var timer = 0.0
@@ -27,10 +28,10 @@ func _process(delta: float) -> void:
 		timer = 0
 		$ProgressBar.value += fire_score
 		
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		$Steering/Mouse.texture = tex_mouse1
-	elif Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
-		$Steering/Mouse.texture = tex_mouse2
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):	$Steering/Mouse.texture = tex_mouse1
+	elif Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):	$Steering/Mouse.texture = tex_mouse2
+	elif Input.is_action_just_pressed("fUp") || Input.is_action_just_pressed("fDown"):
+		$Steering/Mouse.texture = tex_mouse3
 	else:
 		$Steering/Mouse.texture = tex_mouse0
 	
@@ -45,3 +46,6 @@ func _loop_tips():
 
 func _end_start():
 	$"../World/Forest".ignite()#get_tree().quit()
+
+
+#func allow_auto(node: Node) -> void:$Steering/AutoPilot.disabled = false

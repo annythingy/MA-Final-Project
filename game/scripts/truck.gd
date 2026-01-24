@@ -3,46 +3,33 @@ extends CharacterBody2D
 var acceleration_rate = Vector2(128, 512) 
 var brake_rate = 64.0  # speed units per second squared (scalar)
 var car_width = 32
+var water_supply = 1
 	
 func _physics_process(delta):
 	global_position.x = clamp(global_position.x, 560, 1000)
 	global_position.y = clamp(global_position.y,  car_width, 480)
-	
-	if Input.is_action_just_pressed("fUp"): goUp(delta)
-	elif Input.is_action_just_pressed("fDown"): goDown(delta)
-	else: idle()
-	
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		goForwards(delta)
-	elif Input.is_mouse_button_pressed(2 as MouseButton):
-		goBackwards(delta)
-	elif Input.is_mouse_button_pressed(3 as MouseButton):
-		if velocity>Vector2.ZERO: brake(delta)
-		else: splash()
-	else: idle()
-	
-	if Input.is_action_just_pressed("spray"): splash()
+	move_x(delta)
+	move_y(delta)
+	$"../../UI/WaterTank".value = water_supply
 	
 	var collision_data = move_and_collide(velocity * delta)
 	if collision_data:
 		if collision_data.get_collider().age  && collision_data.get_collider().age < 3:
 			collision_data.get_collider().wither()
 		else: velocity = Vector2.ZERO
-			
-func goForwards(delta):
-	velocity.x -= acceleration_rate.x * delta
 
-func goBackwards(delta):
-	velocity.x += acceleration_rate.x * delta
+func move_x(delta):
+	if Input.is_action_just_pressed("fUp"): position.y -= acceleration_rate.y * delta
+	elif Input.is_action_just_pressed("fDown"): position.y += acceleration_rate.y * delta
+	else: idle()
+	
+func move_y(delta):
+	if 	 Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):	velocity.x -= acceleration_rate.x * delta
+	elif Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):	velocity.x += acceleration_rate.x * delta
+	elif Input.is_mouse_button_pressed(MOUSE_BUTTON_MIDDLE):	splash_on()
+	else: idle()
 
-func goUp(delta):
-	position.y -= acceleration_rate.y * delta
-	
-func goDown(delta):
-	position.y += acceleration_rate.y * delta
-	
-func idle():
-	velocity = velocity.lerp(Vector2.ZERO, 0.02)
+func idle(): velocity = velocity.lerp(Vector2.ZERO, 0.02)
 
 func brake(delta):
 	var speed = velocity.length()
@@ -50,11 +37,19 @@ func brake(delta):
 	speed = max(speed, 0)
 	velocity = velocity.normalized() * speed if speed > 0 else Vector2.ZERO
 
-func splash():
-	$Area2D/CollisionShape2D2.disabled = false
-	var fire = $Area2D.get_overlapping_areas()
-	for f in fire:
-		f.get_parent().put_off_fire()
-	await get_tree().create_timer(1.0).timeout
-	$Area2D/CollisionShape2D2.disabled = true
+func splash_on():
+	if !water_supply:
+		print("dry heave")
+		return
+	$SplashArea.visible = true
+	$SplashArea/SplashCollider.disabled = false
+	var fire = $SplashArea.get_overlapping_areas()
+	for f in fire: f.get_parent().put_off_fire()
+	splash_off()
+
+func splash_off():
+	water_supply -= 1
+	await get_tree().create_timer(0.8).timeout
+	$SplashArea/SplashCollider.disabled = true
+	$SplashArea.visible = false
 	

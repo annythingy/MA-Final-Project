@@ -21,5 +21,5 @@ func spawn_cloud():
 func _physics_process(delta):
 	for drop in get_tree().get_nodes_in_group("rain"):
 		drop.global_position.y += 128 * delta
-		if drop.global_position.y > 640:
+		if drop.global_position.y > 680:
 			drop.queue_free()
